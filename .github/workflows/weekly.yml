@@ -30,12 +30,12 @@ jobs:
       groups: ${{ steps.plan.outputs.groups }}
       week: ${{ steps.plan.outputs.week }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: plan
         env:
           ONLY: ${{ inputs.only }}
         run: python3 -I build_all.py plan --out plan.json --only "$ONLY" --github-output "$GITHUB_OUTPUT"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: plan
           path: plan.json
@@ -51,8 +51,8 @@ jobs:
       matrix:
         group: ${{ fromJson(needs.plan.outputs.groups) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           name: plan
       - name: Build the packs
@@ -66,7 +66,7 @@ jobs:
           gh release create "$TAG" out/*.amf --latest=false --notes-file out/NOTES.md \
             --title "Packs of ${{ matrix.group }}, week of ${{ needs.plan.outputs.week }}"
       # only after the release is there, so the index never points at packs that were not published
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: summaries-${{ matrix.group }}
           path: out/*.json
@@ -81,11 +81,11 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       WEEK: ${{ needs.plan.outputs.week }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           name: plan
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         continue-on-error: true   # no summaries at all if every group failed: the index keeps last week's packs
         with:
           pattern: summaries-*
