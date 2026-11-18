@@ -145,7 +145,7 @@ def plan(a):
         SELECT country, class, coalesce(names.common['en'], names.primary) AS name,
                ST_AsText(ST_SimplifyPreserveTopology(geometry, 0.01)),
                ST_AsGeoJSON(ST_SimplifyPreserveTopology(geometry, 0.05)),
-               bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax
+               bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax, names.primary
         FROM %s WHERE subtype IN ('country', 'dependency') AND country IS NOT NULL%s""" % (da, sel)).fetchall()
     best = {}
     for r in rows:   # its territorial waters (class maritime) where Overture has them, else its land
@@ -159,7 +159,7 @@ def plan(a):
             SELECT country, region, coalesce(names.common['en'], names.primary) AS name,
                    ST_AsText(ST_SimplifyPreserveTopology(ST_Buffer(ST_SimplifyPreserveTopology(geometry, 0.01), 0.03), 0.01)),
                    ST_AsGeoJSON(ST_SimplifyPreserveTopology(geometry, 0.05)),
-                   bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax
+                   bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax, names.primary
             FROM %s WHERE subtype = 'region' AND class = 'land' AND country IN (%s)""" % (
             da, ','.join("'%s'" % c for c in split))).fetchall()
     log('%d countries, %d regions of %d big countries · %.0f s' % (len(best), len(regions), len(split), time.time() - t0))
@@ -175,6 +175,8 @@ def plan(a):
             continue
         areas.append(dict(id=c.lower(), name=r[2], iso=[c], country=c, group=CONTINENT.get(c) or guess_group((r[5] + r[7]) / 2, (r[6] + r[8]) / 2),
                           bbox=[round(r[5], 4), round(r[6], 4), round(r[7], 4), round(r[8], 4)], outline=outline(r[4]), join=r[3]))
+        if r[9] and r[9] != r[2]:
+            areas[-1]['local'] = r[9]   # (its own name, for the app's search: Κύπρος, Ελλάδα, Deutschland…)
     country_name = dict((c, r[2]) for c, r in best.items())
     for r in regions:
         c = r[0]
@@ -182,6 +184,8 @@ def plan(a):
         areas.append(dict(id=rid, name='%s (%s)' % (r[2], country_name.get(c, c)), iso=[c], country=c,
                           group=CONTINENT.get(c) or guess_group((r[5] + r[7]) / 2, (r[6] + r[8]) / 2),
                           bbox=[round(r[5], 4), round(r[6], 4), round(r[7], 4), round(r[8], 4)], outline=outline(r[4]), join=r[3]))
+        if r[9] and r[9] != r[2]:
+            areas[-1]['local'] = r[9]
     ids = [x['id'] for x in areas]
     dup = sorted(set(i for i in ids if ids.count(i) > 1))
     if dup:
@@ -194,6 +198,8 @@ def plan(a):
         n = (len(mine) * per + MAX_FILES - 1) // MAX_FILES
         for i, x in enumerate(mine):
             x['chunk'] = g if n == 1 else '%s%d' % (g, i * n // len(mine) + 1)
+            if only:   # (a test run: releases of its own, never this week's release of the whole group)
+                x['chunk'] = 'test' + x['chunk']
     with open(a.out, 'w', encoding='utf-8') as f:
         json.dump(dict(overture=rel, week=week, made=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                        attribution=ATTRIBUTION, areas=areas), f, ensure_ascii=False)

@@ -358,6 +358,8 @@ def index(a):
                               offsets=[s['kinds'][k].get('offset', 0) for k in build_pack.KINDS],
                               file=s.get('bundle'),
                               counts=[s['kinds'][k]['count'] for k in build_pack.KINDS]))
+            if x.get('local'):
+                areas[-1]['local'] = x['local']
             fresh += 1
         elif x['id'] in prev_areas:
             areas.append(prev_areas[x['id']])
@@ -415,7 +417,7 @@ def cleanup(a):
             by_group[m.group(1)].append(r['tagName'])
     for g, tags in sorted(by_group.items()):
         tags.sort(reverse=True)
-        for t in tags[a.keep:]:
+        for t in tags[0 if g.startswith('test') else a.keep:]:   # (a test run's releases: gone once nothing uses them)
             if t not in used:
                 print(t)
 
