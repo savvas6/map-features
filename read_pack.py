@@ -37,8 +37,23 @@ class Reader:
         return (v >> 1) ^ -(v & 1)
 
 
-def read(path):
-    b = gzip.decompress(open(path, 'rb').read())
+def members(path):
+    """The packs in a file: one pack (.amf), or each of a bundle's (.amfb, see overture.py)."""
+    raw = open(path, 'rb').read()
+    if raw[:4] != b'AMFB':
+        return [raw]
+    r = Reader(raw, 5)
+    out = []
+    for _ in range(r.var()):
+        n = r.var()
+        r.p += n
+        off, size = r.var(), r.var()
+        out.append(raw[off:off + size])
+    return out
+
+
+def read(path, data=None):
+    b = gzip.decompress(data if data is not None else open(path, 'rb').read())
     if b[:4] != b'AMFP':
         raise ValueError('%s is not a map-features pack' % path)
     r = Reader(b, 4)
@@ -172,13 +187,13 @@ def main():
     ap.add_argument('--html', help='write a page that draws the packs over OpenStreetMap')
     a = ap.parse_args()
     data, failed = {}, 0
-    for path in a.packs:
-        pack = read(path)
+    for path, blob in [(p, d) for p in a.packs for d in members(p)]:
+        pack = read(path, blob)
         fc = to_geojson(pack)
         kinds = Counter((OTYPES[f['otype']], ['', 'point', 'line', 'polygons'][f['geom']]) for f in pack['feats'])
         nv = sum(1 if f['geom'] == 1 else len(f['g']) if f['geom'] == 2 else sum(len(r) for p in f['g'] for r in p)
                  for f in pack['feats'])
-        print('%-22s %-9s %5d features %7d points %5d strings · data %s · %s' % (
+        print('%-22s %-11s %5d features %7d points %5d strings · data %s · %s' % (
             os.path.basename(path), pack['kind'], len(pack['feats']), nv, pack['strings'],
             datetime.fromtimestamp(pack['data_ts'], timezone.utc).strftime('%Y-%m-%d %H:%M'),
             ', '.join('%s %s %d' % (o, g, n) for (o, g), n in sorted(kinds.items()))))

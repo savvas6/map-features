@@ -26,7 +26,7 @@ CYPRUS = (32.2, 34.5, 34.7, 35.8)
 ATTRIBUTION = '© OpenStreetMap contributors, Overture Maps Foundation'
 # built per region: one pack each would be too big
 SPLIT = ['US', 'CA', 'RU', 'CN', 'IN', 'BR', 'AU', 'DE', 'FR', 'IT', 'GB', 'ES', 'PL', 'JP', 'ID', 'MX']
-MAX_FILES = 990                      # in one release (GitHub allows 1000)
+MAX_FILES = 990                      # in one release (GitHub allows 1000): one file per area, its bundle
 # Overture's classes for each kind (infrastructure; military from land use, springs from water)
 CLASSES = {'helipads': ['helipad', 'heliport'], 'water': ['drinking_water'], 'power': ['power_line', 'minor_line'],
            'radar': ['radar'], 'watchtowers': ['watchtower'], 'telecom': ['communication_tower', 'mobile_phone_tower'],
@@ -143,7 +143,7 @@ def plan(a):
     t0 = time.time()
     rows = con.execute("""
         SELECT country, class, coalesce(names.common['en'], names.primary) AS name,
-               ST_AsText(ST_SimplifyPreserveTopology(geometry, 0.005)),
+               ST_AsText(ST_SimplifyPreserveTopology(geometry, 0.01)),
                ST_AsGeoJSON(ST_SimplifyPreserveTopology(geometry, 0.05)),
                bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax
         FROM %s WHERE subtype IN ('country', 'dependency') AND country IS NOT NULL%s""" % (da, sel)).fetchall()
@@ -157,7 +157,7 @@ def plan(a):
     if split:
         regions = con.execute("""
             SELECT country, region, coalesce(names.common['en'], names.primary) AS name,
-                   ST_AsText(ST_SimplifyPreserveTopology(ST_Buffer(ST_SimplifyPreserveTopology(geometry, 0.01), 0.03), 0.005)),
+                   ST_AsText(ST_SimplifyPreserveTopology(ST_Buffer(ST_SimplifyPreserveTopology(geometry, 0.01), 0.03), 0.01)),
                    ST_AsGeoJSON(ST_SimplifyPreserveTopology(geometry, 0.05)),
                    bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax
             FROM %s WHERE subtype = 'region' AND class = 'land' AND country IN (%s)""" % (
@@ -187,7 +187,7 @@ def plan(a):
     if dup:
         sys.exit('two areas with the same id: ' + ', '.join(dup))
     # releases of at most MAX_FILES files: eu, or eu1, eu2… for a big group
-    per = len(build_pack.KINDS)
+    per = 1
     groups = sorted(set(x['group'] for x in areas))
     for g in groups:
         mine = sorted((x for x in areas if x['group'] == g), key=lambda x: x['id'])
@@ -383,20 +383,66 @@ def build(a):
     releases = {}
     for x in areas:
         s = summaries[x['id']]
+        bundle(a.out, s)
         s['release'] = '%s-%s' % (x['chunk'], p['week'])
         with open(os.path.join(a.out, x['id'] + '.json'), 'w', encoding='utf-8') as f:
             json.dump(s, f, ensure_ascii=False, indent=1)
-        releases.setdefault(s['release'], []).extend(v['file'] for v in s['kinds'].values())
+        releases.setdefault(s['release'], []).append(s['bundle'])
     with open(os.path.join(a.out, 'releases.json'), 'w', encoding='utf-8') as f:
         json.dump(releases, f)
     for tag, files in releases.items():
         size = sum(os.path.getsize(os.path.join(a.out, n)) for n in files)
         with open(os.path.join(a.out, 'NOTES-%s.md' % tag), 'w', encoding='utf-8') as f:
             f.write('Map-feature packs of %s, week of %s, from Overture Maps %s: %d areas, %.1f MB. %s; ODbL 1.0.\n' % (
-                GROUPS.get(a.group, a.group), p['week'], rel, len(files) // len(build_pack.KINDS), size / 1e6, ATTRIBUTION))
+                GROUPS.get(a.group, a.group), p['week'], rel, len(files), size / 1e6, ATTRIBUTION))
     total = sum(v['size'] for s in summaries.values() for v in s['kinds'].values())
     log('%s: %d areas, %.1f MB of packs in %d release(s) · %.0f s' % (a.group, len(areas), total / 1e6, len(releases),
                                                                      time.time() - t0))
+
+
+def bundle(out, s):
+    """An area's eleven packs in one file, <id>.amfb, so a release holds one file per area (GitHub's limits are of
+    files and of uploads): "AMFB" u8 1, varint count, then each pack's kind name, offset and size (varints, the name with
+    its length first), then the packs one after the other. The index has the offsets too: the app asks for the bytes of
+    the kinds wanted only (an HTTP Range request) and cuts them out of the whole file should a server send all of it."""
+    parts = []
+    for k in build_pack.KINDS:
+        v = s['kinds'][k]
+        path = os.path.join(out, v['file'])
+        parts.append((k, open(path, 'rb').read()))
+        os.remove(path)
+    def head(offsets):
+        o = build_pack.Out()
+        o.b += b'AMFB'
+        o.u8(1)
+        o.var(len(parts))
+        for (k, data), off in zip(parts, offsets):
+            n = k.encode('utf-8')
+            o.var(len(n))
+            o.b += n
+            o.var(off)
+            o.var(len(data))
+        return bytes(o.b)
+    offsets = [0] * len(parts)
+    for _ in range(4):   # (the header's size depends on the offsets, which depend on it)
+        h = head(offsets)
+        pos, new = len(h), []
+        for _, data in parts:
+            new.append(pos)
+            pos += len(data)
+        if new == offsets:
+            break
+        offsets = new
+    h = head(offsets)
+    name = s['id'] + '.amfb'
+    with open(os.path.join(out, name), 'wb') as f:
+        f.write(h)
+        for _, data in parts:
+            f.write(data)
+    for (k, data), off in zip(parts, offsets):
+        s['kinds'][k]['offset'] = off
+        s['kinds'][k]['file'] = name
+    s['bundle'] = name
 
 
 # ---------------------------------------------------------------- probe

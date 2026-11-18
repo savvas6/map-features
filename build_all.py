@@ -355,6 +355,8 @@ def index(a):
                               outline=x['outline'], data=s['data'],
                               release=s.get('release') or '%s-%s' % (x.get('chunk') or x['group'], a.week),
                               sizes=[s['kinds'][k]['size'] for k in build_pack.KINDS],
+                              offsets=[s['kinds'][k].get('offset', 0) for k in build_pack.KINDS],
+                              file=s.get('bundle'),
                               counts=[s['kinds'][k]['count'] for k in build_pack.KINDS]))
             fresh += 1
         elif x['id'] in prev_areas:
