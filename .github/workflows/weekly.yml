@@ -2,6 +2,8 @@
 # Each continent gets a release named <continent>-<yyyymmdd>; the release «index» holds index.json(.gz),
 # the list the app reads. STATUS.md is committed every week: it shows what was built, and the commit keeps
 # this schedule alive (GitHub switches off schedules of repositories with no activity for 60 days).
+# ubuntu-24.04, not ubuntu-latest: some of GitHub's first Ubuntu 26.04 machines (image 20261111.82.6) could not reach
+# Geofabrik at all («Network is unreachable», 18 Nov 2026).
 name: Weekly packs
 
 on:
@@ -24,13 +26,15 @@ concurrency:
 
 jobs:
   plan:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     outputs:
       groups: ${{ steps.plan.outputs.groups }}
       week: ${{ steps.plan.outputs.week }}
     steps:
       - uses: actions/checkout@v7
+      - name: Can this machine reach Geofabrik?
+        run: getent ahosts download.geofabrik.de | head -4; curl -sS -o /dev/null -w 'HTTP %{http_code} in %{time_total} s\n' https://download.geofabrik.de/index-v1-nogeom.json || true
       - id: plan
         env:
           ONLY: ${{ inputs.only }}
@@ -43,7 +47,7 @@ jobs:
 
   build:
     needs: plan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 330
     strategy:
       fail-fast: false
@@ -75,7 +79,7 @@ jobs:
   index:
     needs: [plan, build]
     if: ${{ !cancelled() && needs.plan.result == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
