@@ -1,32 +1,36 @@
 #!/usr/bin/env python3
-"""Map-feature packs: the offline packs of one area, built from an OpenStreetMap extract (.osm.pbf).
+"""Map-feature packs: the packs of one area, from an OpenStreetMap extract (.osm.pbf), and the pack format.
 
-The five kinds of the app's «Map features» sheet:
-  military  military areas, firing and training ranges, bases, checkpoints  landuse=military, military=*
-  helipads  helipads and heliports                                           aeroway=helipad|heliport
-  water     drinking water, water points, wells, taps, springs               amenity=drinking_water|water_point,
-                                                                             man_made=water_well|water_tap, natural=spring
-  limits    roads and bridges with a weight, axle-load, height or width     highway=* ways with maxweight, maxheight…;
-            limit, and height barriers                                       nodes with them (height restrictors)
-  power     power lines; their vertices are the pylons and poles            power=line|minor_line
+The weekly packs are built from Overture Maps instead (overture.py, which uses this file's KINDS, KEEP and encode());
+this reader of .osm.pbf files makes the same kinds from a Geofabrik extract, with nothing to install, for checks.
 
-Standard library only (Python 3.8+), so it runs anywhere with nothing installed. A big extract can be cut down first
-with osmium-tool (OSMIUM_FILTER below, as the weekly job on GitHub does); the packs come out the same.
+The eleven kinds of the app's «Map features» sheet:
+  military     military areas, firing and training ranges, bases, danger areas   landuse=military, military=*
+  helipads     helipads and heliports                                              aeroway=helipad|heliport
+  water        drinking water and springs (and wells, taps, water points here)    amenity=drinking_water, natural=spring…
+  power        power lines; their points are the pylons and poles                 power=line|minor_line
+  radar        radar sites                                                         tower:type=radar
+  watchtowers  watchtowers                                                         tower:type=watchtower
+  telecom      communication and mobile phone towers                              tower:type=communication
+  pipelines    pipelines (oil, gas, water…), also under ground and under water     man_made=pipeline
+  dams         dams                                                                waterway=dam
+  runways      runways                                                             aeroway=runway
+  borders      border crossings                                                    barrier=border_control
 
   python3 -I build_pack.py EXTRACT.osm.pbf --id cyprus --name Cyprus --out DIR [--geojson] [--verbose]
 
 Writes DIR/<id>-<kind>.amf for each kind (gzip) and DIR/<id>.json (counts, sizes, the date of the data).
 The data are © OpenStreetMap contributors, ODbL 1.0, and so are the packs.
 
-Pack format 1 (after gunzip; little-endian varints as in protobuf, «zz» = zigzag varint):
-  "AMFP"  u8 format=1  u8 kind (1 military, 2 helipads, 3 water, 4 limits, 5 power)
+Pack format 2 (after gunzip; little-endian varints as in protobuf, «zz» = zigzag varint):
+  "AMFP"  u8 format=2  varint length + the kind's name (UTF-8: «military», «power»…)
   varint  data time (unix seconds of the OpenStreetMap data)
   varint  string count, then each string: varint byte length + UTF-8
   varint  feature count, then each feature:
-    u8      geometry (bits 0-1: 1 point, 2 line, 3 polygons) | OSM type << 2 (0 node, 1 way, 2 relation)
-    varint  OSM id
+    u8      geometry (bits 0-1: 1 point, 2 line, 3 polygons) | source << 2 (0 OSM node, 1 way, 2 relation, 3 other)
+    varint  id (the OSM id; 0 for another source)
     varint  last edited, in days since 1970-01-01 (0 = unknown)
-    varint  tag count, then varint key and value string indexes
+    varint  tag count, then varint key and value string indexes (OpenStreetMap tags)
     point:    zz dx, zz dy
     line:     varint n, then n × (zz dx, zz dy)
     polygons: varint polygon count; each: varint ring count (the outer ring first, then its holes);
@@ -38,60 +42,70 @@ Pack format 1 (after gunzip; little-endian varints as in protobuf, «zz» = zigz
 import argparse, gzip, json, os, re, struct, sys, time, zlib
 from datetime import datetime, timezone
 
-FORMAT = 1
-KINDS = ['military', 'helipads', 'water', 'limits', 'power']
+FORMAT = 2
+KINDS = ['military', 'helipads', 'water', 'power', 'radar', 'watchtowers', 'telecom', 'pipelines', 'dams', 'runways',
+         'borders']
+POINT_KINDS = {'helipads', 'water', 'radar', 'watchtowers', 'telecom', 'borders'}   # an area becomes its middle point
+AREA_KINDS = {'military', 'dams', 'runways'}                                       # a closed way is an area, else a line
+# (power and pipelines: always lines)
 
-LIMIT_KEYS = [b'maxweight', b'maxweight:hgv', b'maxweightrating', b'maxweightrating:hgv', b'maxaxleload',
-              b'maxheight', b'maxheight:physical', b'maxwidth', b'maxwidth:physical']
-TRIGGER_KEYS = set([b'landuse', b'military', b'aeroway', b'amenity', b'man_made', b'natural', b'power'] + LIMIT_KEYS)
+TRIGGER_KEYS = set([b'landuse', b'military', b'aeroway', b'amenity', b'man_made', b'natural', b'power', b'tower:type',
+                    b'waterway', b'barrier'])
 
-# the same choice for osmium-tool, to cut a big extract down first:  osmium tags-filter -t IN.pbf <these> -o OUT.pbf
-OSMIUM_FILTER = ['nwr/landuse=military', 'nwr/military', 'nwr/aeroway=helipad,heliport',
-                 'nwr/amenity=drinking_water,water_point', 'nwr/man_made=water_well,water_tap', 'nwr/natural=spring',
-                 'w/power=line,minor_line', 'nw/' + ','.join(k.decode() for k in LIMIT_KEYS)]
-
+NAME = ['name', 'name:en']
 KEEP = {
-    'military': ['military', 'landuse', 'name', 'name:en', 'military_service', 'operator', 'access', 'ref',
-                 'opening_hours', 'description'],
-    'helipads': ['aeroway', 'name', 'name:en', 'ref', 'icao', 'iata', 'operator', 'emergency', 'surface', 'lit',
-                 'ele', 'access', 'description'],
-    'water': ['amenity', 'man_made', 'natural', 'name', 'name:en', 'drinking_water', 'pump', 'seasonal',
-              'intermittent', 'access', 'fee', 'operator', 'ele', 'description'],
-    'limits': ['highway', 'barrier', 'bridge', 'bridge:name', 'tunnel', 'name', 'name:en', 'ref'] +
-              [k.decode() for k in LIMIT_KEYS] + ['lanes', 'oneway', 'surface'],
-    'power': ['power', 'voltage', 'cables', 'circuits', 'frequency', 'operator', 'name', 'ref'],
+    'military': ['military', 'landuse'] + NAME + ['military_service', 'operator', 'access', 'ref', 'opening_hours',
+                                                  'description'],
+    'helipads': ['aeroway'] + NAME + ['ref', 'icao', 'iata', 'operator', 'emergency', 'surface', 'lit', 'ele', 'access',
+                                      'description'],
+    'water': ['amenity', 'man_made', 'natural'] + NAME + ['drinking_water', 'pump', 'seasonal', 'intermittent', 'access',
+                                                         'fee', 'operator', 'ele', 'description'],
+    'power': ['power', 'voltage', 'cables', 'circuits', 'frequency', 'operator', 'name', 'ref', 'location'],
+    'radar': ['man_made', 'tower:type'] + NAME + ['operator', 'military', 'height', 'ele', 'ref', 'description'],
+    'watchtowers': ['man_made', 'tower:type'] + NAME + ['operator', 'military', 'height', 'ele', 'access',
+                                                        'description'],
+    'telecom': ['man_made', 'tower:type'] + NAME + ['operator', 'height', 'ele', 'ref', 'communication:mobile_phone',
+                                                    'communication:radio', 'communication:television',
+                                                    'communication:microwave', 'description'],
+    'pipelines': ['man_made', 'substance', 'type', 'location', 'usage', 'diameter', 'pressure', 'operator'] + NAME +
+                 ['ref', 'disused', 'description'],
+    'dams': ['waterway'] + NAME + ['height', 'ele', 'material', 'operator', 'ref', 'description'],
+    'runways': ['aeroway', 'ref'] + NAME + ['length', 'width', 'surface', 'lit', 'ele', 'operator'],
+    'borders': ['barrier'] + NAME + ['local_name', 'operator', 'opening_hours', 'access', 'description'],
 }
-KEEP_B = {k: set(s.encode() for s in v) for k, v in KEEP.items()}
-DIGIT = re.compile(rb'\d')
-
-
-def has_limit(t):
-    """A real limit has a number: maxheight=default, none or unsigned is not one."""
-    for k in LIMIT_KEYS:
-        v = t.get(k)
-        if v is not None and DIGIT.search(v):
-            return True
-    return False
 
 
 def classify(t, otype):
     """The kind of an object from its tags (bytes → bytes), or None. otype: 'n', 'w' or 'r'."""
+    tower = t.get(b'tower:type')
     mil = t.get(b'military')
-    if t.get(b'landuse') == b'military' or (mil is not None and mil != b'no'):
+    if tower == b'radar':
+        kind = 'radar'
+    elif tower == b'watchtower':
+        kind = 'watchtowers'
+    elif tower == b'communication' and t.get(b'man_made') in (b'tower', b'mast'):
+        kind = 'telecom'
+    elif t.get(b'landuse') == b'military' or (mil is not None and mil != b'no'):
         kind = 'military'
     elif t.get(b'aeroway') in (b'helipad', b'heliport'):
         kind = 'helipads'
+    elif t.get(b'aeroway') == b'runway':
+        kind = 'runways'
     elif (t.get(b'amenity') in (b'drinking_water', b'water_point') or t.get(b'man_made') in (b'water_well', b'water_tap')
           or t.get(b'natural') == b'spring'):
         kind = 'water'
     elif otype == 'w' and t.get(b'power') in (b'line', b'minor_line') and t.get(b'line') not in (b'busbar', b'bay'):
         kind = 'power'
-    elif otype != 'r' and (otype == 'n' or b'highway' in t) and has_limit(t):
-        kind = 'limits'
+    elif otype == 'w' and t.get(b'man_made') == b'pipeline':
+        kind = 'pipelines'
+    elif t.get(b'waterway') == b'dam':
+        kind = 'dams'
+    elif t.get(b'barrier') == b'border_control':
+        kind = 'borders'
     else:
         return None
     # relations: areas only, as multipolygons or boundaries (the UN buffer zone in Cyprus is a type=boundary relation)
-    if otype == 'r' and (t.get(b'type') not in (b'multipolygon', b'boundary') or kind not in ('military', 'helipads', 'water')):
+    if otype == 'r' and (t.get(b'type') not in (b'multipolygon', b'boundary') or kind in ('power', 'pipelines')):
         return None
     return kind
 
@@ -627,9 +641,9 @@ def make_features(ex, log, vlog=lambda s: None):
             why.append('%s way/%d: %d of %d nodes' % (kind, wid, len(pts), len(refs)))
             continue
         closed = refs[0] == refs[-1] and len(refs) >= 4 and len(pts) == len(refs)
-        if kind == 'military' and closed:
+        if kind in AREA_KINDS and closed:
             feats[kind].append(dict(otype=1, id=wid, t=t, ts=ts, geom=3, g=polygons_of([pts])))
-        elif kind in ('helipads', 'water'):
+        elif kind in POINT_KINDS:
             c = centroid(pts) if closed else pts[len(pts) // 2]
             feats[kind].append(dict(otype=1, id=wid, t=t, ts=ts, geom=1, g=c))
         else:
@@ -649,7 +663,7 @@ def make_features(ex, log, vlog=lambda s: None):
             why.append('%s relation/%d: no closed ring from %d member ways' % (kind, rid, len(members)))
             continue
         polys = polygons_of(rings)
-        if kind == 'military':
+        if kind not in POINT_KINDS:
             feats[kind].append(dict(otype=2, id=rid, t=t, ts=ts, geom=3, g=polys))
         else:
             biggest = max(polys, key=lambda p: abs(ring_area2(p[0] + p[0][:1])))
@@ -732,7 +746,9 @@ def encode(kind, feats, data_ts):
     o = Out()
     o.b += b'AMFP'
     o.u8(FORMAT)
-    o.u8(KINDS.index(kind) + 1)
+    name = kind.encode('utf-8')
+    o.var(len(name))
+    o.b += name
     o.var(max(0, int(data_ts)))
     o.var(len(strings))
     for s in strings:

@@ -352,7 +352,8 @@ def index(a):
         if os.path.exists(sp):
             s = json.load(open(sp, encoding='utf-8'))
             areas.append(dict(id=x['id'], name=x['name'], group=x['group'], iso=x['iso'], bbox=x['bbox'],
-                              outline=x['outline'], data=s['data'], release='%s-%s' % (x['group'], a.week),
+                              outline=x['outline'], data=s['data'],
+                              release=s.get('release') or '%s-%s' % (x.get('chunk') or x['group'], a.week),
                               sizes=[s['kinds'][k]['size'] for k in build_pack.KINDS],
                               counts=[s['kinds'][k]['count'] for k in build_pack.KINDS]))
             fresh += 1
@@ -364,11 +365,16 @@ def index(a):
             areas.append(x)
             kept += 1
     areas.sort(key=lambda x: x['name'].lower())
+    areas = [x for x in areas if len(x.get('sizes', [])) == len(build_pack.KINDS)]   # (not those of an older format)
+    overture = p.get('overture')
     out = dict(format=build_pack.FORMAT, built=now(), kinds=build_pack.KINDS,
                base='https://github.com/%s/releases/download/' % a.repo,
-               attribution='© OpenStreetMap contributors',
+               attribution=p.get('attribution') or '© OpenStreetMap contributors',
                license='ODbL 1.0, https://opendatacommons.org/licenses/odbl/',
-               source='OpenStreetMap extracts by Geofabrik, https://download.geofabrik.de', areas=areas)
+               source=('Overture Maps %s, https://overturemaps.org' % overture) if overture else
+               'OpenStreetMap extracts by Geofabrik, https://download.geofabrik.de', areas=areas)
+    if overture:
+        out['overture'] = overture
     raw = json.dumps(out, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
     with open(a.out, 'wb') as f:
         f.write(raw)

@@ -1,23 +1,27 @@
-# Builds the map-feature packs of every country every week and publishes them as releases.
-# Each continent gets a release named <continent>-<yyyymmdd>; the release «index» holds index.json(.gz),
-# the list the app reads. STATUS.md is committed every week: it shows what was built, and the commit keeps
-# this schedule alive (GitHub switches off schedules of repositories with no activity for 60 days).
-# ubuntu-24.04, not ubuntu-latest: some of GitHub's first Ubuntu 26.04 machines (image 20261111.82.6) could not reach
-# Geofabrik at all («Network is unreachable», 18 Nov 2026).
+# Builds the map-feature packs of every country from Overture Maps and publishes them as releases.
+# Overture publishes a new release about once a month (usually on a Wednesday); this runs every Thursday and skips a
+# week with nothing new. Each continent's packs are a release named <continent>-<yyyymmdd> (eu1, eu2… when one would
+# have more than GitHub's 1000 files); the release «index» holds index.json(.gz), the list the app reads. STATUS.md is
+# committed after each build: it shows what was built, and the commit keeps this schedule alive (GitHub switches off
+# the schedules of repositories with no activity for 60 days).
 name: Weekly packs
 
 on:
   schedule:
-    - cron: '23 3 * * 1'          # Mondays at 03:23 UTC, after Geofabrik's nightly extracts
+    - cron: '23 5 * * 4'          # Thursdays at 05:23 UTC
   workflow_dispatch:
     inputs:
       only:
-        description: 'Only these areas (Geofabrik ids, comma-separated) for a test, e.g. cyprus,malta. Empty: all.'
+        description: 'Only these countries (ISO codes, comma-separated) for a test, e.g. cy,mt. Empty: all.'
         required: false
         default: ''
+      force:
+        description: 'Build even if this Overture release was built already'
+        type: boolean
+        default: false
 
 permissions:
-  contents: write                 # the releases and the weekly STATUS.md commit
+  contents: write                 # the releases and the STATUS.md commit
   actions: write                  # switches this schedule back on, should GitHub ever switch it off
 
 concurrency:
@@ -27,19 +31,26 @@ concurrency:
 jobs:
   plan:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     outputs:
       groups: ${{ steps.plan.outputs.groups }}
       week: ${{ steps.plan.outputs.week }}
+      skip: ${{ steps.plan.outputs.skip }}
     steps:
       - uses: actions/checkout@v7
-      - name: Can this machine reach Geofabrik?
-        run: getent ahosts download.geofabrik.de | head -4; curl -sS -o /dev/null -w 'HTTP %{http_code} in %{time_total} s\n' https://download.geofabrik.de/index-v1-nogeom.json || true
+      - name: DuckDB
+        run: python3 -m venv /tmp/venv && /tmp/venv/bin/pip install --quiet duckdb
       - id: plan
         env:
+          GH_TOKEN: ${{ github.token }}
           ONLY: ${{ inputs.only }}
-        run: python3 -I build_all.py plan --out plan.json --only "$ONLY" --github-output "$GITHUB_OUTPUT"
+          FORCE: ${{ inputs.force && '--force' || '' }}
+        run: |
+          gh release download index --pattern index.json --output previous.json 2>/dev/null || echo '{}' > previous.json
+          /tmp/venv/bin/python -I overture.py plan --out plan.json --only "$ONLY" --previous previous.json $FORCE \
+            --github-output "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v7
+        if: steps.plan.outputs.skip != 'true'
         with:
           name: plan
           path: plan.json
@@ -47,11 +58,12 @@ jobs:
 
   build:
     needs: plan
+    if: needs.plan.outputs.skip != 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 330
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 4
       matrix:
         group: ${{ fromJson(needs.plan.outputs.groups) }}
     steps:
@@ -59,17 +71,22 @@ jobs:
       - uses: actions/download-artifact@v8
         with:
           name: plan
+      - name: DuckDB
+        run: python3 -m venv /tmp/venv && /tmp/venv/bin/pip install --quiet duckdb
       - name: Build the packs
-        run: python3 -I build_all.py build --plan plan.json --group "${{ matrix.group }}" --out out --jobs 4
-      - name: Publish them as a release
+        run: /tmp/venv/bin/python -I overture.py build --plan plan.json --group "${{ matrix.group }}" --out out
+      - name: Publish them as releases
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ matrix.group }}-${{ needs.plan.outputs.week }}
         run: |
-          gh release delete "$TAG" --cleanup-tag --yes 2>/dev/null || true
-          gh release create "$TAG" out/*.amf --latest=false --notes-file out/NOTES.md \
-            --title "Packs of ${{ matrix.group }}, week of ${{ needs.plan.outputs.week }}"
-      # only after the release is there, so the index never points at packs that were not published
+          cd out
+          for tag in $(python3 -c 'import json; print(" ".join(json.load(open("releases.json"))))'); do
+            gh release delete "$tag" --cleanup-tag --yes 2>/dev/null || true
+            python3 -c 'import json, sys; print("\n".join(json.load(open("releases.json"))[sys.argv[1]]))' "$tag" > files.txt
+            gh release create "$tag" --latest=false --notes-file "NOTES-$tag.md" --title "Packs $tag"
+            xargs -a files.txt -n 100 gh release upload "$tag" --clobber
+          done
+      # only after the releases are there, so the index never points at packs that were not published
       - uses: actions/upload-artifact@v7
         with:
           name: summaries-${{ matrix.group }}
@@ -78,7 +95,7 @@ jobs:
 
   index:
     needs: [plan, build]
-    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.skip != 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
@@ -90,19 +107,19 @@ jobs:
         with:
           name: plan
       - uses: actions/download-artifact@v8
-        continue-on-error: true   # no summaries at all if every group failed: the index keeps last week's packs
+        continue-on-error: true   # no summaries at all if every group failed: the index keeps the packs it had
         with:
           pattern: summaries-*
           path: summaries
           merge-multiple: true
       - name: The index the app reads
         run: |
-          mkdir -p summaries
+          mkdir -p summaries && rm -f summaries/releases.json
           gh release download index --pattern index.json --output previous.json 2>/dev/null || echo '{}' > previous.json
           python3 -I build_all.py index --plan plan.json --summaries summaries --repo "$GITHUB_REPOSITORY" \
             --week "$WEEK" --previous previous.json --out index.json --status STATUS.md
           gh release view index >/dev/null 2>&1 || gh release create index --latest --title "Index of the packs" \
-            --notes "The app reads index.json.gz. Map data © OpenStreetMap contributors, ODbL 1.0."
+            --notes "The app reads index.json.gz. Map data © OpenStreetMap contributors, Overture Maps Foundation; ODbL 1.0."
           gh release upload index index.json index.json.gz --clobber
       - name: Remove the releases no longer needed
         run: |
@@ -110,7 +127,7 @@ jobs:
           for t in $(python3 -I build_all.py cleanup --index index.json --releases releases.json --keep 2); do
             gh release delete "$t" --cleanup-tag --yes
           done
-      - name: Weekly status
+      - name: Status
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

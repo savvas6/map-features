@@ -10,8 +10,7 @@ import argparse, gzip, json, os, sys
 from collections import Counter
 from datetime import datetime, timezone
 
-KINDS = ['military', 'helipads', 'water', 'limits', 'power']
-OTYPES = ['node', 'way', 'relation']
+OTYPES = ['node', 'way', 'relation', 'other']
 
 
 class Reader:
@@ -44,9 +43,11 @@ def read(path):
         raise ValueError('%s is not a map-features pack' % path)
     r = Reader(b, 4)
     fmt = r.u8()
-    if fmt != 1:
+    if fmt != 2:
         raise ValueError('format %d not known' % fmt)
-    kind = KINDS[r.u8() - 1]
+    n = r.var()
+    kind = b[r.p:r.p + n].decode('utf-8')
+    r.p += n
     data_ts = r.var()
     strings = []
     for _ in range(r.var()):
@@ -141,7 +142,8 @@ HTML = '''<!doctype html><html><head><meta charset="utf-8"><title>Map features c
 .lg i{display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px;border-radius:2px}
 .leaflet-popup-content{font-size:12px;line-height:1.4}</style></head><body><div id="m"></div><script>
 const D = __DATA__;
-const C = {military:'#e0353b', helipads:'#2f6fe4', water:'#0a84ff', limits:'#ff7a00', power:'#9c7a00'};
+const C = {military:'#e0353b', helipads:'#2f6fe4', water:'#0a84ff', power:'#9c7a00', radar:'#b03fd6',
+           watchtowers:'#7a4a12', telecom:'#e0398f', pipelines:'#5b6b7c', dams:'#00897b', runways:'#333a44', borders:'#ff7a00'};
 const m = L.map('m', {preferCanvas: true});
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(m);
@@ -149,7 +151,7 @@ const all = [], ctl = {};
 for (const [kind, fc] of Object.entries(D)) {
   const lay = L.geoJSON(fc, {
     style: () => kind === 'military' ? {color: C[kind], weight: 1.5, fillOpacity: .18}
-                : {color: C[kind], weight: kind === 'limits' ? 5 : 2, opacity: .9},
+                : {color: C[kind], weight: kind === 'runways' || kind === 'dams' ? 4 : 2, opacity: .9},
     pointToLayer: (f, ll) => L.circleMarker(ll, {radius: kind === 'helipads' ? 6 : 4, color: '#fff', weight: 1,
                                                   fillColor: C[kind], fillOpacity: 1}),
     onEachFeature: (f, l) => l.bindPopup('<b>' + kind + '</b><br>' + Object.entries(f.properties)
