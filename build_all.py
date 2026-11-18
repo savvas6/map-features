@@ -17,7 +17,7 @@ Standard library only.
                                 [--previous previous.json] --out index.json [--status STATUS.md]
   python3 -I build_all.py cleanup --index index.json --releases releases.json [--keep 2]
 """
-import argparse, gzip, hashlib, json, os, re, subprocess, sys, time, urllib.request
+import argparse, gzip, hashlib, json, os, re, socket, subprocess, sys, time, urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -36,6 +36,17 @@ MAX_ASSETS = 1000                 # GitHub's limit of files in one release
 
 def log(s):
     print(s, flush=True)
+
+
+# IPv4 first: some of GitHub's machines have IPv6 addresses but no IPv6 route («Network is unreachable», 2026-11-18)
+_getaddrinfo = socket.getaddrinfo
+
+
+def _ipv4_first(*args, **kw):
+    return sorted(_getaddrinfo(*args, **kw), key=lambda a: a[0] != socket.AF_INET)
+
+
+socket.getaddrinfo = _ipv4_first
 
 
 def now():
@@ -125,8 +136,16 @@ def plan(a):
     if a.geofabrik_index:
         idx = json.load(open(a.geofabrik_index, encoding='utf-8'))
     else:
-        with http(GEOFABRIK_INDEX) as r:
-            idx = json.load(r)
+        for attempt in range(5):
+            try:
+                with http(GEOFABRIK_INDEX) as r:
+                    idx = json.load(r)
+                break
+            except Exception as e:
+                if attempt == 4:
+                    raise
+                log('Geofabrik\'s index not got (%s); again in %d s' % (e, 15 * (attempt + 1)))
+                time.sleep(15 * (attempt + 1))
     props = dict((f['properties']['id'], f['properties']) for f in idx['features'])
     geoms = dict((f['properties']['id'], f['geometry']) for f in idx['features'])
     children = defaultdict(list)
