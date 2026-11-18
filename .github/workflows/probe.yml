@@ -1,0 +1,31 @@
+# A check by hand: the columns of Overture's layers and what an area has (python3 overture.py probe).
+name: Probe Overture
+
+on:
+  workflow_dispatch:
+    inputs:
+      area:
+        description: 'west,south,east,north (empty: Cyprus)'
+        required: false
+        default: ''
+      release:
+        description: 'An Overture release, e.g. 2026-10-21.0 (empty: the latest)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - name: DuckDB
+        run: python3 -m venv /tmp/venv && /tmp/venv/bin/pip install --quiet duckdb
+      - name: Probe
+        env:
+          AREA: ${{ inputs.area }}
+          RELEASE: ${{ inputs.release }}
+        run: /tmp/venv/bin/python -I overture.py probe ${AREA:+--area "$AREA"} ${RELEASE:+--release "$RELEASE"}
