@@ -16,7 +16,7 @@ The size of each pack, and its number of features in brackets.
 | Aichi Prefecture (Japan) | 2026-10-21 | 2 KB (22) | 1 KB (90) | 4 KB (303) | 74 KB (1558) | 1 KB (1) | 1 KB (1) | 4 KB (260) | 2 KB (88) | 3 KB (69) | 1 KB (4) | 1 KB (0) |
 | Akita Prefecture (Japan) | 2026-10-21 | 1 KB (8) | 1 KB (28) | 3 KB (160) | 38 KB (659) | 1 KB (0) | 1 KB (0) | 3 KB (259) | 7 KB (379) | 2 KB (67) | 1 KB (5) | 1 KB (0) |
 | Aksai Chin (China) | 2026-10-21 | 10 KB (252) | 1 KB (28) | 1 KB (6) | 2 KB (12) | 1 KB (9) | 1 KB (1) | 1 KB (11) | 1 KB (3) | 1 KB (5) | 1 KB (2) | 1 KB (0) |
-| Alabama (United States) | 2026-10-21 | 27 KB (118) | 7 KB (321) | 2 KB (100) | 648 KB (6264) | 1 KB (15) | 1 KB (8) | 47 KB (3831) | 197 KB (644) | 53 KB (1980) | 11 KB (357) | 1 KB (0) |
+| Alabama (United States) | 2026-10-21 | 27 KB (118) | 7 KB (321) | 2 KB (100) | 647 KB (6264) | 1 KB (15) | 1 KB (8) | 47 KB (3831) | 197 KB (644) | 53 KB (1980) | 11 KB (357) | 1 KB (0) |
 | Alagoas (Brazil) | 2026-10-21 | 2 KB (20) | 1 KB (17) | 1 KB (10) | 93 KB (270) | 1 KB (0) | 1 KB (1) | 5 KB (525) | 16 KB (56) | 4 KB (98) | 1 KB (26) | 1 KB (1) |
 | Alaska (United States) | 2026-10-21 | 64 KB (137) | 3 KB (147) | 2 KB (72) | 102 KB (1594) | 1 KB (23) | 1 KB (1) | 8 KB (440) | 114 KB (1405) | 5 KB (112) | 26 KB (960) | 1 KB (9) |
 | Albania | 2026-10-21 | 14 KB (133) | 1 KB (43) | 12 KB (808) | 50 KB (711) | 1 KB (1) | 1 KB (0) | 4 KB (404) | 14 KB (233) | 8 KB (205) | 1 KB (12) | 1 KB (46) |
@@ -37,12 +37,12 @@ The size of each pack, and its number of features in brackets.
 | Anhui (China) | 2026-10-21 | 15 KB (187) | 1 KB (58) | 1 KB (10) | 613 KB (6970) | 1 KB (6) | 1 KB (4) | 9 KB (858) | 7 KB (156) | 26 KB (811) | 2 KB (29) | 1 KB (2) |
 | Antarctica | 2026-10-21 | 1 KB (0) | 1 KB (45) | 1 KB (9) | 1 KB (78) | 1 KB (7) | 1 KB (0) | 1 KB (54) | 4 KB (191) | 1 KB (1) | 1 KB (28) | 1 KB (0) |
 | Antigua and Barbuda | 2026-10-21 | 1 KB (2) | 1 KB (5) | 1 KB (1) | 1 KB (12) | 1 KB (0) | 1 KB (0) | 1 KB (29) | 1 KB (1) | 1 KB (1) | 1 KB (5) | 1 KB (0) |
-| Aomori Prefecture (Japan) | 2026-10-21 | 8 KB (28) | 1 KB (28) | 1 KB (72) | 46 KB (1081) | 1 KB (0) | 1 KB (0) | 3 KB (221) | 5 KB (195) | 2 KB (41) | 1 KB (6) | 1 KB (0) |
+| Aomori Prefecture (Japan) | 2026-10-21 | 8 KB (28) | 1 KB (28) | 1 KB (72) | 47 KB (1081) | 1 KB (0) | 1 KB (0) | 3 KB (221) | 5 KB (195) | 2 KB (41) | 1 KB (6) | 1 KB (0) |
 | Aosta Valley (Italy) | 2026-10-21 | 1 KB (13) | 1 KB (32) | 20 KB (1682) | 12 KB (165) | 1 KB (0) | 1 KB (0) | 1 KB (49) | 35 KB (326) | 2 KB (67) | 1 KB (5) | 1 KB (3) |
 | Apulia (Italy) | 2026-10-21 | 17 KB (219) | 1 KB (47) | 23 KB (1727) | 121 KB (1772) | 1 KB (4) | 1 KB (5) | 9 KB (629) | 18 KB (511) | 1 KB (17) | 2 KB (49) | 1 KB (7) |
-| Aragon (Spain) | 2026-10-21 | 11 KB (81) | 2 KB (102) | 54 KB (3469) | 262 KB (3411) | 1 KB (0) | 1 KB (3) | 6 KB (484) | 60 KB (786) | 15 KB (348) | 1 KB (26) | 1 KB (0) |
+| Aragon (Spain) | 2026-10-21 | 11 KB (81) | 2 KB (102) | 54 KB (3469) | 263 KB (3411) | 1 KB (0) | 1 KB (3) | 6 KB (484) | 60 KB (786) | 15 KB (348) | 1 KB (26) | 1 KB (0) |
 | Argentina | 2026-10-21 | 36 KB (352) | 8 KB (421) | 20 KB (1685) | 990 KB (4660) | 1 KB (20) | 2 KB (163) | 59 KB (4321) | 153 KB (1717) | 41 KB (931) | 33 KB (1151) | 3 KB (139) |
-| Arizona (United States) | 2026-10-21 | 19 KB (257) | 10 KB (611) | 96 KB (8273) | 990 KB (27186) | 1 KB (12) | 1 KB (6) | 31 KB (2400) | 80 KB (1142) | 71 KB (1921) | 16 KB (524) | 1 KB (109) |
+| Arizona (United States) | 2026-10-21 | 19 KB (257) | 10 KB (611) | 96 KB (8273) | 989 KB (27186) | 1 KB (12) | 1 KB (6) | 31 KB (2400) | 80 KB (1142) | 71 KB (1921) | 16 KB (524) | 1 KB (109) |
 | Arkansas (United States) | 2026-10-21 | 7 KB (59) | 3 KB (147) | 4 KB (214) | 421 KB (4083) | 1 KB (6) | 1 KB (3) | 27 KB (2208) | 188 KB (1042) | 31 KB (1118) | 12 KB (464) | 1 KB (0) |
 | Arkhangelsk Oblast (Russia) | 2026-10-21 | 14 KB (120) | 1 KB (60) | 5 KB (413) | 121 KB (1577) | 1 KB (12) | 1 KB (10) | 4 KB (270) | 48 KB (867) | 1 KB (6) | 2 KB (47) | 1 KB (2) |
 | Armenia | 2026-10-21 | 19 KB (425) | 1 KB (42) | 43 KB (3626) | 104 KB (1035) | 1 KB (0) | 1 KB (3) | 6 KB (451) | 38 KB (874) | 6 KB (229) | 1 KB (14) | 1 KB (8) |
@@ -53,7 +53,7 @@ The size of each pack, and its number of features in brackets.
 | Astrakhan Oblast (Russia) | 2026-10-21 | 6 KB (107) | 1 KB (59) | 1 KB (6) | 179 KB (1233) | 1 KB (0) | 1 KB (1) | 2 KB (109) | 21 KB (423) | 1 KB (18) | 1 KB (13) | 1 KB (17) |
 | Asturias (Spain) | 2026-10-21 | 1 KB (6) | 1 KB (33) | 37 KB (2382) | 140 KB (2866) | 1 KB (2) | 1 KB (5) | 4 KB (265) | 12 KB (131) | 3 KB (48) | 1 KB (9) | 1 KB (0) |
 | Australian Capital Territory (Australia) | 2026-10-21 | 3 KB (20) | 1 KB (15) | 4 KB (313) | 184 KB (7207) | 1 KB (0) | 1 KB (0) | 3 KB (184) | 6 KB (207) | 8 KB (285) | 1 KB (8) | 1 KB (0) |
-| Austria | 2026-10-21 | 45 KB (250) | 8 KB (404) | 161 KB (11435) | 1.6 MB (34572) | 1 KB (23) | 1 KB (12) | 66 KB (4401) | 286 KB (6153) | 45 KB (1241) | 4 KB (123) | 1 KB (64) |
+| Austria | 2026-10-21 | 45 KB (250) | 8 KB (404) | 161 KB (11435) | 1.6 MB (34572) | 1 KB (23) | 1 KB (12) | 66 KB (4401) | 287 KB (6153) | 45 KB (1241) | 4 KB (123) | 1 KB (64) |
 | Autonomous Community of the Basque Country (Spain) | 2026-10-21 | 4 KB (47) | 1 KB (49) | 68 KB (5293) | 132 KB (2566) | 1 KB (2) | 1 KB (10) | 4 KB (255) | 24 KB (430) | 5 KB (137) | 1 KB (14) | 1 KB (7) |
 | Auvergne-Rhône-Alpes (France) | 2026-10-21 | 28 KB (368) | 5 KB (293) | 146 KB (10222) | 1.3 MB (32883) | 1 KB (8) | 1 KB (5) | 99 KB (7247) | 198 KB (2883) | 37 KB (807) | 7 KB (206) | 1 KB (41) |
 | Azerbaijan | 2026-10-21 | 37 KB (861) | 2 KB (137) | 6 KB (361) | 189 KB (1638) | 1 KB (1) | 1 KB (0) | 3 KB (185) | 20 KB (373) | 6 KB (130) | 2 KB (48) | 1 KB (33) |
@@ -72,10 +72,10 @@ The size of each pack, and its number of features in brackets.
 | Barbados | 2026-10-21 | 1 KB (5) | 1 KB (3) | 1 KB (33) | 1 KB (1) | 1 KB (1) | 1 KB (0) | 1 KB (17) | 1 KB (4) | 1 KB (3) | 1 KB (2) | 1 KB (0) |
 | Bashkortostan (Russia) | 2026-10-21 | 2 KB (28) | 1 KB (60) | 15 KB (987) | 208 KB (1943) | 1 KB (0) | 1 KB (0) | 5 KB (377) | 29 KB (405) | 6 KB (262) | 1 KB (25) | 1 KB (1) |
 | Basilicata (Italy) | 2026-10-21 | 2 KB (46) | 1 KB (34) | 17 KB (1258) | 79 KB (1110) | 1 KB (0) | 1 KB (0) | 3 KB (201) | 67 KB (2434) | 2 KB (39) | 1 KB (6) | 1 KB (0) |
-| Bavaria (Germany) | 2026-10-21 | 58 KB (354) | 7 KB (396) | 118 KB (7597) | 1.5 MB (33212) | 1 KB (18) | 2 KB (74) | 92 KB (5938) | 102 KB (2156) | 16 KB (424) | 9 KB (278) | 1 KB (57) |
+| Bavaria (Germany) | 2026-10-21 | 58 KB (354) | 7 KB (396) | 118 KB (7597) | 1.5 MB (33212) | 1 KB (18) | 2 KB (74) | 93 KB (5938) | 102 KB (2156) | 16 KB (424) | 9 KB (278) | 1 KB (57) |
 | Beijing (China) | 2026-10-21 | 33 KB (390) | 1 KB (77) | 3 KB (171) | 112 KB (1703) | 1 KB (3) | 1 KB (54) | 5 KB (576) | 2 KB (60) | 10 KB (324) | 2 KB (25) | 1 KB (25) |
 | Belarus | 2026-10-21 | 71 KB (752) | 4 KB (218) | 56 KB (4042) | 2.0 MB (26551) | 1 KB (44) | 1 KB (52) | 51 KB (3463) | 150 KB (4257) | 10 KB (338) | 5 KB (165) | 4 KB (243) |
-| Belgium | 2026-10-21 | 44 KB (352) | 5 KB (207) | 30 KB (1885) | 282 KB (8127) | 1 KB (20) | 1 KB (18) | 84 KB (8128) | 233 KB (1867) | 6 KB (223) | 4 KB (85) | 1 KB (5) |
+| Belgium | 2026-10-21 | 44 KB (352) | 5 KB (207) | 30 KB (1885) | 281 KB (8127) | 1 KB (20) | 1 KB (18) | 84 KB (8128) | 233 KB (1867) | 6 KB (223) | 4 KB (85) | 1 KB (5) |
 | Belgorod Oblast (Russia) | 2026-10-21 | 15 KB (270) | 1 KB (56) | 5 KB (301) | 240 KB (3193) | 1 KB (0) | 1 KB (9) | 5 KB (323) | 7 KB (119) | 8 KB (147) | 1 KB (30) | 1 KB (116) |
 | Belize | 2026-10-21 | 1 KB (10) | 1 KB (7) | 1 KB (23) | 21 KB (173) | 1 KB (0) | 1 KB (3) | 2 KB (132) | 1 KB (25) | 1 KB (20) | 2 KB (43) | 1 KB (14) |
 | Bengkulu (Indonesia) | 2026-10-21 | 1 KB (10) | 1 KB (1) | 1 KB (4) | 6 KB (30) | 1 KB (0) | 1 KB (0) | 2 KB (100) | 1 KB (0) | 1 KB (1) | 1 KB (4) | 1 KB (0) |
@@ -127,7 +127,7 @@ The size of each pack, and its number of features in brackets.
 | Chad | 2026-10-21 | 2 KB (28) | 1 KB (6) | 4 KB (236) | 10 KB (155) | 1 KB (0) | 1 KB (0) | 3 KB (203) | 8 KB (35) | 1 KB (51) | 3 KB (77) | 1 KB (2) |
 | Chandigarh (India) | 2026-10-21 | 1 KB (2) | 1 KB (3) | 1 KB (9) | 3 KB (33) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (4) | 1 KB (0) |
 | Chechnya (Russia) | 2026-10-21 | 3 KB (28) | 1 KB (46) | 1 KB (58) | 63 KB (292) | 1 KB (0) | 1 KB (8) | 1 KB (20) | 3 KB (41) | 1 KB (7) | 1 KB (4) | 1 KB (0) |
-| Chelyabinsk Oblast (Russia) | 2026-10-21 | 11 KB (174) | 2 KB (113) | 11 KB (686) | 201 KB (2227) | 1 KB (6) | 1 KB (15) | 18 KB (1311) | 68 KB (1556) | 8 KB (272) | 1 KB (23) | 1 KB (23) |
+| Chelyabinsk Oblast (Russia) | 2026-10-21 | 11 KB (174) | 2 KB (113) | 11 KB (686) | 200 KB (2227) | 1 KB (6) | 1 KB (15) | 18 KB (1311) | 68 KB (1556) | 8 KB (272) | 1 KB (23) | 1 KB (23) |
 | Chhattisgarh (India) | 2026-10-21 | 12 KB (298) | 3 KB (219) | 1 KB (2) | 245 KB (1386) | 1 KB (0) | 1 KB (0) | 1 KB (75) | 4 KB (128) | 10 KB (213) | 1 KB (15) | 1 KB (0) |
 | Chiapas (Mexico) | 2026-10-21 | 2 KB (18) | 1 KB (21) | 1 KB (27) | 49 KB (298) | 1 KB (0) | 1 KB (0) | 1 KB (64) | 1 KB (5) | 1 KB (11) | 2 KB (57) | 1 KB (18) |
 | Chiba Prefecture (Japan) | 2026-10-21 | 3 KB (14) | 1 KB (111) | 5 KB (334) | 48 KB (1263) | 1 KB (0) | 1 KB (1) | 4 KB (268) | 2 KB (112) | 2 KB (41) | 1 KB (15) | 1 KB (7) |
@@ -141,7 +141,7 @@ The size of each pack, and its number of features in brackets.
 | Coahuila (Mexico) | 2026-10-21 | 1 KB (9) | 1 KB (8) | 1 KB (22) | 76 KB (518) | 1 KB (0) | 1 KB (0) | 1 KB (67) | 6 KB (78) | 3 KB (69) | 2 KB (76) | 1 KB (17) |
 | Cocos (Keeling) Islands | 2026-10-21 | 1 KB (1) | 1 KB (0) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (6) | 1 KB (0) | 1 KB (1) | 1 KB (0) |
 | Colima (Mexico) | 2026-10-21 | 1 KB (17) | 1 KB (16) | 1 KB (7) | 15 KB (90) | 1 KB (0) | 1 KB (7) | 1 KB (65) | 1 KB (32) | 1 KB (13) | 1 KB (13) | 1 KB (0) |
-| Colombia | 2026-10-21 | 35 KB (434) | 5 KB (370) | 11 KB (614) | 255 KB (2917) | 1 KB (2) | 1 KB (13) | 12 KB (798) | 53 KB (3067) | 6 KB (122) | 17 KB (591) | 1 KB (22) |
+| Colombia | 2026-10-21 | 35 KB (434) | 5 KB (370) | 11 KB (614) | 256 KB (2917) | 1 KB (2) | 1 KB (13) | 12 KB (798) | 53 KB (3067) | 6 KB (122) | 17 KB (591) | 1 KB (22) |
 | Colorado (United States) | 2026-10-21 | 13 KB (131) | 7 KB (283) | 15 KB (1084) | 642 KB (12146) | 1 KB (11) | 1 KB (19) | 23 KB (1787) | 102 KB (2116) | 155 KB (6803) | 12 KB (358) | 1 KB (1) |
 | Community of Madrid (Spain) | 2026-10-21 | 16 KB (138) | 4 KB (161) | 50 KB (3997) | 98 KB (1570) | 1 KB (4) | 1 KB (8) | 5 KB (366) | 31 KB (454) | 6 KB (124) | 1 KB (32) | 1 KB (5) |
 | Comoros | 2026-10-21 | 1 KB (1) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (4) | 1 KB (0) | 1 KB (0) | 1 KB (3) | 1 KB (0) |
@@ -171,7 +171,7 @@ The size of each pack, and its number of features in brackets.
 | East Kalimantan (Indonesia) | 2026-10-21 | 2 KB (24) | 1 KB (48) | 1 KB (10) | 14 KB (130) | 1 KB (0) | 1 KB (0) | 2 KB (162) | 1 KB (29) | 2 KB (45) | 1 KB (21) | 1 KB (0) |
 | East Nusa Tenggara (Indonesia) | 2026-10-21 | 2 KB (19) | 1 KB (16) | 14 KB (926) | 10 KB (56) | 1 KB (0) | 1 KB (2) | 2 KB (127) | 1 KB (14) | 4 KB (70) | 1 KB (16) | 1 KB (5) |
 | East Timor | 2026-10-21 | 1 KB (30) | 1 KB (10) | 1 KB (20) | 7 KB (52) | 1 KB (0) | 1 KB (1) | 1 KB (32) | 1 KB (3) | 1 KB (4) | 1 KB (13) | 1 KB (3) |
-| Ecuador | 2026-10-21 | 21 KB (195) | 2 KB (104) | 10 KB (450) | 112 KB (909) | 1 KB (1) | 1 KB (1) | 8 KB (614) | 91 KB (810) | 4 KB (80) | 7 KB (293) | 1 KB (7) |
+| Ecuador | 2026-10-21 | 21 KB (195) | 2 KB (104) | 10 KB (450) | 113 KB (909) | 1 KB (1) | 1 KB (1) | 8 KB (614) | 91 KB (810) | 4 KB (80) | 7 KB (293) | 1 KB (7) |
 | Egypt | 2026-10-21 | 83 KB (917) | 5 KB (460) | 6 KB (380) | 484 KB (3134) | 1 KB (35) | 1 KB (62) | 9 KB (822) | 61 KB (2860) | 8 KB (192) | 9 KB (175) | 1 KB (22) |
 | Ehime Prefecture (Japan) | 2026-10-21 | 1 KB (3) | 1 KB (38) | 1 KB (69) | 25 KB (578) | 1 KB (0) | 1 KB (1) | 1 KB (73) | 1 KB (20) | 10 KB (299) | 1 KB (1) | 1 KB (0) |
 | El Salvador | 2026-10-21 | 4 KB (41) | 1 KB (48) | 1 KB (20) | 19 KB (188) | 1 KB (0) | 1 KB (41) | 3 KB (270) | 3 KB (80) | 2 KB (31) | 1 KB (30) | 1 KB (17) |
@@ -216,7 +216,7 @@ The size of each pack, and its number of features in brackets.
 | Grand Est (France) | 2026-10-21 | 55 KB (748) | 2 KB (107) | 50 KB (3251) | 908 KB (19776) | 1 KB (11) | 1 KB (13) | 60 KB (4361) | 150 KB (1967) | 16 KB (445) | 5 KB (172) | 1 KB (40) |
 | Greater Poland Voivodeship (Poland) | 2026-10-21 | 10 KB (64) | 1 KB (51) | 3 KB (138) | 328 KB (7505) | 1 KB (1) | 1 KB (19) | 22 KB (1728) | 56 KB (1310) | 2 KB (63) | 2 KB (51) | 1 KB (0) |
 | Greece | 2026-10-21 | 71 KB (651) | 7 KB (394) | 79 KB (5263) | 178 KB (1845) | 1 KB (12) | 1 KB (23) | 17 KB (1104) | 20 KB (259) | 14 KB (303) | 6 KB (145) | 1 KB (70) |
-| Greenland | 2026-10-21 | 3 KB (14) | 3 KB (92) | 2 KB (103) | 5 KB (106) | 1 KB (8) | 1 KB (0) | 1 KB (94) | 9 KB (293) | 1 KB (25) | 1 KB (28) | 1 KB (0) |
+| Greenland | 2026-10-21 | 3 KB (14) | 3 KB (92) | 2 KB (103) | 5 KB (106) | 1 KB (8) | 1 KB (0) | 1 KB (94) | 8 KB (293) | 1 KB (25) | 1 KB (28) | 1 KB (0) |
 | Grenada | 2026-10-21 | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (2) | 1 KB (0) | 1 KB (0) | 1 KB (7) | 1 KB (1) | 1 KB (0) | 1 KB (3) | 1 KB (0) |
 | Guadeloupe | 2026-10-21 | 1 KB (11) | 1 KB (14) | 1 KB (77) | 6 KB (115) | 1 KB (2) | 1 KB (0) | 2 KB (56) | 2 KB (83) | 1 KB (6) | 1 KB (14) | 1 KB (4) |
 | Guam | 2026-10-21 | 19 KB (61) | 1 KB (11) | 1 KB (4) | 2 KB (11) | 1 KB (8) | 1 KB (1) | 1 KB (106) | 1 KB (48) | 1 KB (5) | 1 KB (7) | 1 KB (0) |
@@ -261,12 +261,12 @@ The size of each pack, and its number of features in brackets.
 | Iceland | 2026-10-21 | 1 KB (11) | 1 KB (19) | 4 KB (221) | 216 KB (1427) | 1 KB (5) | 1 KB (0) | 2 KB (108) | 25 KB (964) | 7 KB (161) | 5 KB (153) | 1 KB (5) |
 | Idaho (United States) | 2026-10-21 | 3 KB (22) | 3 KB (137) | 9 KB (681) | 282 KB (2216) | 1 KB (4) | 1 KB (8) | 11 KB (824) | 21 KB (123) | 27 KB (797) | 11 KB (363) | 1 KB (7) |
 | Ile-de-France (France) | 2026-10-21 | 21 KB (208) | 3 KB (159) | 40 KB (3029) | 264 KB (8210) | 1 KB (10) | 1 KB (9) | 31 KB (2174) | 66 KB (789) | 1 KB (39) | 4 KB (86) | 1 KB (8) |
-| Illinois (United States) | 2026-10-21 | 17 KB (151) | 9 KB (371) | 17 KB (1268) | 1.0 MB (20584) | 1 KB (10) | 1 KB (76) | 65 KB (5357) | 264 KB (7578) | 45 KB (1392) | 18 KB (626) | 1 KB (1) |
+| Illinois (United States) | 2026-10-21 | 17 KB (151) | 9 KB (371) | 17 KB (1268) | 1.0 MB (20584) | 1 KB (10) | 1 KB (76) | 65 KB (5357) | 265 KB (7578) | 45 KB (1392) | 18 KB (626) | 1 KB (1) |
 | Indiana (United States) | 2026-10-21 | 12 KB (57) | 5 KB (207) | 6 KB (427) | 932 KB (11198) | 1 KB (7) | 1 KB (23) | 41 KB (3342) | 144 KB (993) | 21 KB (703) | 12 KB (420) | 1 KB (0) |
 | Ingushetia (Russia) | 2026-10-21 | 1 KB (19) | 1 KB (11) | 1 KB (35) | 22 KB (112) | 1 KB (0) | 1 KB (4) | 1 KB (15) | 2 KB (19) | 1 KB (1) | 1 KB (4) | 1 KB (0) |
 | Inner Mongolia (China) | 2026-10-21 | 15 KB (401) | 1 KB (116) | 1 KB (11) | 1.8 MB (16434) | 1 KB (55) | 1 KB (39) | 19 KB (1715) | 23 KB (440) | 15 KB (424) | 2 KB (55) | 1 KB (52) |
 | Iowa (United States) | 2026-10-21 | 8 KB (59) | 4 KB (158) | 5 KB (365) | 478 KB (6163) | 1 KB (6) | 1 KB (2) | 37 KB (2655) | 61 KB (430) | 19 KB (487) | 9 KB (292) | 1 KB (0) |
-| Iran | 2026-10-21 | 136 KB (2017) | 13 KB (1136) | 43 KB (2596) | 1.4 MB (12338) | 1 KB (22) | 1 KB (52) | 29 KB (2167) | 619 KB (9763) | 60 KB (2232) | 10 KB (309) | 2 KB (75) |
+| Iran | 2026-10-21 | 136 KB (2017) | 13 KB (1136) | 43 KB (2596) | 1.4 MB (12338) | 1 KB (22) | 1 KB (52) | 29 KB (2167) | 618 KB (9763) | 60 KB (2232) | 10 KB (309) | 2 KB (75) |
 | Iraq | 2026-10-21 | 70 KB (1461) | 5 KB (397) | 10 KB (438) | 317 KB (2126) | 1 KB (2) | 1 KB (104) | 13 KB (953) | 47 KB (898) | 14 KB (331) | 5 KB (112) | 2 KB (105) |
 | Ireland | 2026-10-21 | 12 KB (71) | 4 KB (209) | 43 KB (2527) | 2.3 MB (71100) | 1 KB (19) | 1 KB (24) | 28 KB (2091) | 58 KB (1104) | 4 KB (96) | 4 KB (142) | 1 KB (5) |
 | Irkutsk Oblast (Russia) | 2026-10-21 | 5 KB (84) | 1 KB (93) | 2 KB (122) | 280 KB (2477) | 1 KB (1) | 1 KB (0) | 6 KB (463) | 36 KB (768) | 2 KB (49) | 1 KB (31) | 1 KB (5) |
@@ -274,7 +274,7 @@ The size of each pack, and its number of features in brackets.
 | Isle of Man | 2026-10-21 | 1 KB (3) | 1 KB (11) | 1 KB (15) | 16 KB (278) | 1 KB (5) | 1 KB (0) | 1 KB (38) | 1 KB (26) | 1 KB (23) | 1 KB (10) | 1 KB (0) |
 | Israel | 2026-10-21 | 91 KB (495) | 2 KB (143) | 49 KB (2883) | 167 KB (4058) | 1 KB (6) | 1 KB (11) | 3 KB (245) | 2 KB (107) | 2 KB (64) | 4 KB (79) | 1 KB (12) |
 | Iturup | 2026-10-21 | 1 KB (3) | 1 KB (10) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (5) | 1 KB (0) | 1 KB (4) | 1 KB (0) |
-| Ivanovo Oblast (Russia) | 2026-10-21 | 2 KB (27) | 1 KB (24) | 2 KB (132) | 114 KB (2184) | 1 KB (0) | 1 KB (0) | 3 KB (174) | 25 KB (156) | 1 KB (30) | 1 KB (8) | 1 KB (0) |
+| Ivanovo Oblast (Russia) | 2026-10-21 | 2 KB (27) | 1 KB (24) | 2 KB (132) | 115 KB (2184) | 1 KB (0) | 1 KB (0) | 3 KB (174) | 25 KB (156) | 1 KB (30) | 1 KB (8) | 1 KB (0) |
 | Ivory Coast | 2026-10-21 | 5 KB (73) | 1 KB (42) | 10 KB (1122) | 93 KB (460) | 1 KB (1) | 1 KB (46) | 4 KB (266) | 2 KB (48) | 9 KB (266) | 2 KB (51) | 1 KB (11) |
 | Iwate Prefecture (Japan) | 2026-10-21 | 1 KB (6) | 1 KB (24) | 1 KB (38) | 45 KB (826) | 1 KB (7) | 1 KB (0) | 2 KB (113) | 1 KB (39) | 3 KB (72) | 1 KB (2) | 1 KB (0) |
 | Jalisco (Mexico) | 2026-10-21 | 3 KB (37) | 1 KB (64) | 1 KB (72) | 86 KB (559) | 1 KB (0) | 1 KB (8) | 1 KB (63) | 4 KB (61) | 6 KB (152) | 2 KB (45) | 1 KB (4) |
@@ -286,9 +286,9 @@ The size of each pack, and its number of features in brackets.
 | Jervis Bay Territory (Australia) | 2026-10-21 | 1 KB (4) | 1 KB (5) | 1 KB (3) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (2) | 1 KB (0) |
 | Jewish Autonomous Oblast (Russia) | 2026-10-21 | 3 KB (34) | 1 KB (29) | 1 KB (4) | 31 KB (176) | 1 KB (0) | 1 KB (0) | 2 KB (132) | 3 KB (7) | 1 KB (12) | 1 KB (5) | 1 KB (6) |
 | Jharkhand (India) | 2026-10-21 | 1 KB (13) | 1 KB (26) | 1 KB (17) | 176 KB (977) | 1 KB (0) | 1 KB (4) | 1 KB (82) | 10 KB (23) | 9 KB (173) | 1 KB (14) | 1 KB (0) |
-| Jiangsu (China) | 2026-10-21 | 22 KB (277) | 1 KB (67) | 1 KB (43) | 783 KB (12818) | 1 KB (12) | 1 KB (30) | 11 KB (1004) | 18 KB (556) | 15 KB (565) | 2 KB (31) | 1 KB (8) |
+| Jiangsu (China) | 2026-10-21 | 22 KB (277) | 1 KB (67) | 1 KB (43) | 784 KB (12818) | 1 KB (12) | 1 KB (30) | 11 KB (1004) | 18 KB (556) | 15 KB (565) | 2 KB (31) | 1 KB (8) |
 | Jiangxi (China) | 2026-10-21 | 10 KB (129) | 1 KB (54) | 1 KB (20) | 328 KB (4074) | 1 KB (2) | 1 KB (6) | 6 KB (482) | 3 KB (69) | 66 KB (2134) | 1 KB (19) | 1 KB (0) |
-| Jilin (China) | 2026-10-21 | 14 KB (171) | 1 KB (61) | 1 KB (3) | 345 KB (3556) | 1 KB (7) | 1 KB (14) | 5 KB (434) | 8 KB (92) | 16 KB (483) | 1 KB (27) | 1 KB (29) |
+| Jilin (China) | 2026-10-21 | 14 KB (171) | 1 KB (61) | 1 KB (3) | 344 KB (3556) | 1 KB (7) | 1 KB (14) | 5 KB (434) | 8 KB (92) | 16 KB (483) | 1 KB (27) | 1 KB (29) |
 | Jordan | 2026-10-21 | 9 KB (227) | 2 KB (196) | 6 KB (354) | 44 KB (428) | 1 KB (1) | 1 KB (29) | 4 KB (335) | 1 KB (15) | 4 KB (94) | 1 KB (20) | 1 KB (39) |
 | Kabardino-Balkaria (Russia) | 2026-10-21 | 6 KB (56) | 1 KB (17) | 4 KB (231) | 72 KB (674) | 1 KB (0) | 1 KB (7) | 1 KB (48) | 2 KB (35) | 2 KB (23) | 1 KB (2) | 1 KB (10) |
 | Kagawa Prefecture (Japan) | 2026-10-21 | 1 KB (5) | 1 KB (24) | 1 KB (60) | 12 KB (209) | 1 KB (3) | 1 KB (1) | 2 KB (107) | 1 KB (2) | 13 KB (545) | 1 KB (1) | 1 KB (0) |
@@ -315,7 +315,7 @@ The size of each pack, and its number of features in brackets.
 | Komi Republic (Russia) | 2026-10-21 | 3 KB (25) | 2 KB (133) | 2 KB (119) | 86 KB (829) | 1 KB (3) | 1 KB (10) | 4 KB (284) | 82 KB (1358) | 1 KB (9) | 1 KB (31) | 1 KB (1) |
 | Kosovo | 2026-10-21 | 5 KB (33) | 1 KB (109) | 6 KB (370) | 24 KB (266) | 1 KB (0) | 1 KB (0) | 2 KB (115) | 1 KB (20) | 1 KB (20) | 1 KB (13) | 1 KB (29) |
 | Kostroma Oblast (Russia) | 2026-10-21 | 1 KB (12) | 1 KB (11) | 2 KB (102) | 139 KB (2141) | 1 KB (0) | 1 KB (0) | 3 KB (209) | 17 KB (233) | 1 KB (12) | 1 KB (10) | 1 KB (0) |
-| Krasnodar Krai (Russia) | 2026-10-21 | 26 KB (301) | 4 KB (240) | 26 KB (1744) | 291 KB (3220) | 1 KB (6) | 1 KB (17) | 13 KB (918) | 38 KB (670) | 5 KB (180) | 5 KB (153) | 1 KB (26) |
+| Krasnodar Krai (Russia) | 2026-10-21 | 26 KB (301) | 4 KB (240) | 26 KB (1744) | 290 KB (3220) | 1 KB (6) | 1 KB (17) | 13 KB (918) | 38 KB (670) | 5 KB (180) | 5 KB (153) | 1 KB (26) |
 | Krasnoyarsk Krai (Russia) | 2026-10-21 | 7 KB (103) | 2 KB (178) | 5 KB (313) | 237 KB (2032) | 1 KB (0) | 1 KB (1) | 6 KB (412) | 91 KB (1546) | 3 KB (57) | 3 KB (72) | 1 KB (2) |
 | Kumamoto Prefecture (Japan) | 2026-10-21 | 3 KB (21) | 1 KB (37) | 1 KB (60) | 31 KB (415) | 1 KB (0) | 1 KB (0) | 2 KB (125) | 1 KB (38) | 3 KB (107) | 1 KB (4) | 1 KB (0) |
 | Kunashir | 2026-10-21 | 1 KB (5) | 1 KB (11) | 1 KB (5) | 1 KB (2) | 1 KB (1) | 1 KB (0) | 1 KB (5) | 1 KB (3) | 1 KB (0) | 1 KB (1) | 1 KB (1) |
@@ -332,18 +332,18 @@ The size of each pack, and its number of features in brackets.
 | Latvia | 2026-10-21 | 18 KB (127) | 1 KB (40) | 11 KB (719) | 775 KB (17072) | 1 KB (23) | 1 KB (23) | 19 KB (1385) | 35 KB (629) | 5 KB (172) | 3 KB (72) | 1 KB (34) |
 | Lazio (Italy) | 2026-10-21 | 25 KB (213) | 3 KB (145) | 70 KB (5219) | 158 KB (3035) | 1 KB (5) | 1 KB (7) | 11 KB (781) | 9 KB (237) | 2 KB (65) | 3 KB (95) | 1 KB (13) |
 | Lebanon | 2026-10-21 | 20 KB (215) | 1 KB (47) | 2 KB (89) | 12 KB (150) | 1 KB (0) | 1 KB (31) | 1 KB (69) | 1 KB (5) | 1 KB (21) | 1 KB (10) | 1 KB (9) |
-| Leningrad Oblast (Russia) | 2026-10-21 | 35 KB (304) | 2 KB (148) | 20 KB (1173) | 293 KB (4396) | 1 KB (1) | 1 KB (8) | 29 KB (2139) | 117 KB (1553) | 6 KB (148) | 2 KB (49) | 2 KB (80) |
+| Leningrad Oblast (Russia) | 2026-10-21 | 35 KB (304) | 2 KB (148) | 20 KB (1173) | 293 KB (4396) | 1 KB (1) | 1 KB (8) | 29 KB (2139) | 116 KB (1553) | 6 KB (148) | 2 KB (49) | 2 KB (80) |
 | Lesotho | 2026-10-21 | 2 KB (20) | 1 KB (20) | 1 KB (13) | 46 KB (711) | 1 KB (0) | 1 KB (6) | 5 KB (344) | 3 KB (72) | 19 KB (457) | 2 KB (44) | 1 KB (19) |
 | Lesser Poland Voivodeship (Poland) | 2026-10-21 | 7 KB (79) | 2 KB (70) | 16 KB (911) | 511 KB (11301) | 1 KB (2) | 1 KB (50) | 13 KB (738) | 59 KB (2314) | 7 KB (184) | 1 KB (14) | 1 KB (0) |
 | Liaoning (China) | 2026-10-21 | 26 KB (276) | 1 KB (14) | 1 KB (4) | 672 KB (8384) | 1 KB (0) | 1 KB (3) | 2 KB (134) | 11 KB (182) | 13 KB (366) | 2 KB (64) | 1 KB (13) |
 | Liberia | 2026-10-21 | 1 KB (9) | 1 KB (25) | 27 KB (3145) | 8 KB (25) | 1 KB (0) | 1 KB (1) | 1 KB (58) | 1 KB (2) | 1 KB (9) | 1 KB (24) | 1 KB (5) |
-| Libya | 2026-10-21 | 31 KB (471) | 1 KB (89) | 7 KB (523) | 391 KB (3459) | 1 KB (2) | 1 KB (4) | 7 KB (484) | 53 KB (728) | 107 KB (7511) | 5 KB (143) | 1 KB (56) |
+| Libya | 2026-10-21 | 31 KB (471) | 1 KB (89) | 7 KB (523) | 391 KB (3459) | 1 KB (2) | 1 KB (4) | 7 KB (484) | 53 KB (728) | 106 KB (7511) | 5 KB (143) | 1 KB (56) |
 | Liechtenstein | 2026-10-21 | 1 KB (0) | 1 KB (5) | 1 KB (78) | 1 KB (16) | 1 KB (0) | 1 KB (0) | 1 KB (28) | 2 KB (46) | 1 KB (2) | 1 KB (0) | 1 KB (0) |
 | Liguria (Italy) | 2026-10-21 | 9 KB (90) | 2 KB (79) | 48 KB (3690) | 77 KB (1072) | 1 KB (1) | 1 KB (5) | 8 KB (460) | 5 KB (67) | 2 KB (50) | 1 KB (12) | 1 KB (23) |
 | Lipetsk Oblast (Russia) | 2026-10-21 | 1 KB (16) | 1 KB (10) | 4 KB (283) | 204 KB (2707) | 1 KB (0) | 1 KB (1) | 3 KB (176) | 14 KB (136) | 4 KB (161) | 1 KB (24) | 1 KB (7) |
 | Lithuania | 2026-10-21 | 13 KB (122) | 1 KB (37) | 10 KB (488) | 325 KB (4711) | 1 KB (13) | 1 KB (42) | 14 KB (1089) | 34 KB (535) | 33 KB (1418) | 4 KB (121) | 1 KB (65) |
 | Lombardy (Italy) | 2026-10-21 | 23 KB (403) | 8 KB (452) | 189 KB (14352) | 326 KB (6000) | 1 KB (11) | 1 KB (23) | 31 KB (2283) | 36 KB (1163) | 16 KB (391) | 3 KB (109) | 2 KB (89) |
-| Louisiana (United States) | 2026-10-21 | 10 KB (71) | 8 KB (435) | 1 KB (73) | 477 KB (4712) | 1 KB (11) | 1 KB (15) | 33 KB (2837) | 556 KB (3928) | 23 KB (778) | 8 KB (282) | 1 KB (0) |
+| Louisiana (United States) | 2026-10-21 | 10 KB (71) | 8 KB (435) | 1 KB (73) | 477 KB (4712) | 1 KB (11) | 1 KB (15) | 33 KB (2837) | 556 KB (3928) | 24 KB (778) | 8 KB (282) | 1 KB (0) |
 | Lower Saxony (Germany) | 2026-10-21 | 42 KB (421) | 5 KB (298) | 25 KB (1407) | 366 KB (8807) | 1 KB (31) | 2 KB (36) | 50 KB (2974) | 107 KB (2245) | 8 KB (194) | 6 KB (201) | 1 KB (11) |
 | Lower Silesian Voivodeship (Poland) | 2026-10-21 | 13 KB (108) | 1 KB (43) | 12 KB (545) | 409 KB (8651) | 1 KB (0) | 1 KB (20) | 18 KB (1119) | 30 KB (708) | 7 KB (132) | 1 KB (43) | 1 KB (8) |
 | Lublin Voivodeship (Poland) | 2026-10-21 | 18 KB (122) | 1 KB (57) | 5 KB (251) | 558 KB (11787) | 1 KB (4) | 1 KB (43) | 12 KB (779) | 17 KB (323) | 2 KB (86) | 1 KB (22) | 2 KB (166) |
@@ -357,7 +357,7 @@ The size of each pack, and its number of features in brackets.
 | Maine (United States) | 2026-10-21 | 13 KB (50) | 2 KB (88) | 2 KB (118) | 266 KB (2475) | 1 KB (6) | 1 KB (10) | 13 KB (864) | 19 KB (177) | 27 KB (807) | 6 KB (191) | 1 KB (96) |
 | Malawi | 2026-10-21 | 1 KB (7) | 1 KB (13) | 2 KB (102) | 45 KB (133) | 1 KB (0) | 1 KB (1) | 2 KB (155) | 1 KB (20) | 3 KB (61) | 1 KB (35) | 1 KB (9) |
 | Malaysia | 2026-10-21 | 27 KB (214) | 3 KB (189) | 7 KB (433) | 221 KB (2913) | 1 KB (7) | 1 KB (24) | 14 KB (1066) | 33 KB (960) | 12 KB (180) | 4 KB (81) | 3 KB (243) |
-| Maldives | 2026-10-21 | 1 KB (5) | 1 KB (5) | 1 KB (15) | 1 KB (5) | 1 KB (1) | 1 KB (0) | 1 KB (69) | 2 KB (72) | 1 KB (2) | 1 KB (32) | 1 KB (0) |
+| Maldives | 2026-10-21 | 1 KB (5) | 1 KB (5) | 1 KB (15) | 1 KB (5) | 1 KB (1) | 1 KB (0) | 1 KB (69) | 1 KB (72) | 1 KB (2) | 1 KB (32) | 1 KB (0) |
 | Mali | 2026-10-21 | 6 KB (92) | 1 KB (92) | 6 KB (369) | 25 KB (84) | 1 KB (6) | 1 KB (13) | 7 KB (489) | 1 KB (2) | 8 KB (312) | 2 KB (62) | 1 KB (15) |
 | Malta | 2026-10-21 | 1 KB (13) | 1 KB (10) | 1 KB (23) | 1 KB (9) | 1 KB (5) | 1 KB (1) | 1 KB (24) | 1 KB (21) | 1 KB (36) | 1 KB (4) | 1 KB (0) |
 | Maluku (Indonesia) | 2026-10-21 | 1 KB (11) | 1 KB (4) | 1 KB (13) | 3 KB (39) | 1 KB (0) | 1 KB (0) | 1 KB (55) | 1 KB (4) | 1 KB (2) | 1 KB (21) | 1 KB (0) |
@@ -403,12 +403,12 @@ The size of each pack, and its number of features in brackets.
 | Moscow Oblast (Russia) | 2026-10-21 | 41 KB (498) | 6 KB (367) | 33 KB (2384) | 427 KB (6272) | 1 KB (13) | 1 KB (3) | 77 KB (6538) | 111 KB (2736) | 8 KB (233) | 3 KB (82) | 1 KB (4) |
 | Mozambique | 2026-10-21 | 2 KB (32) | 1 KB (19) | 4 KB (233) | 118 KB (336) | 1 KB (0) | 1 KB (1) | 8 KB (435) | 7 KB (46) | 5 KB (192) | 4 KB (147) | 1 KB (6) |
 | Murmansk Oblast (Russia) | 2026-10-21 | 17 KB (255) | 2 KB (106) | 4 KB (177) | 88 KB (653) | 1 KB (3) | 1 KB (2) | 4 KB (222) | 9 KB (226) | 5 KB (48) | 2 KB (30) | 1 KB (23) |
-| Myanmar | 2026-10-21 | 188 KB (2743) | 4 KB (359) | 3 KB (99) | 252 KB (3114) | 1 KB (0) | 1 KB (9) | 7 KB (542) | 15 KB (203) | 31 KB (611) | 2 KB (60) | 1 KB (54) |
+| Myanmar | 2026-10-21 | 188 KB (2743) | 4 KB (359) | 3 KB (99) | 253 KB (3114) | 1 KB (0) | 1 KB (9) | 7 KB (542) | 15 KB (203) | 31 KB (611) | 2 KB (60) | 1 KB (54) |
 | Nagaland (India) | 2026-10-21 | 1 KB (9) | 1 KB (14) | 1 KB (5) | 12 KB (30) | 1 KB (0) | 1 KB (0) | 1 KB (7) | 1 KB (10) | 1 KB (1) | 1 KB (3) | 1 KB (0) |
 | Nagano Prefecture (Japan) | 2026-10-21 | 1 KB (1) | 1 KB (49) | 3 KB (186) | 46 KB (533) | 1 KB (0) | 1 KB (1) | 3 KB (152) | 4 KB (144) | 11 KB (417) | 1 KB (3) | 1 KB (0) |
 | Nagasaki Prefecture (Japan) | 2026-10-21 | 7 KB (37) | 1 KB (23) | 1 KB (35) | 16 KB (238) | 1 KB (0) | 1 KB (0) | 2 KB (179) | 1 KB (18) | 5 KB (181) | 1 KB (7) | 1 KB (1) |
 | Namibia | 2026-10-21 | 2 KB (27) | 1 KB (28) | 16 KB (1256) | 575 KB (3391) | 1 KB (4) | 1 KB (1) | 5 KB (326) | 8 KB (224) | 25 KB (1097) | 15 KB (556) | 1 KB (35) |
-| Nara Prefecture (Japan) | 2026-10-21 | 1 KB (3) | 1 KB (17) | 1 KB (39) | 22 KB (377) | 1 KB (0) | 1 KB (0) | 1 KB (55) | 2 KB (23) | 3 KB (99) | 1 KB (0) | 1 KB (0) |
+| Nara Prefecture (Japan) | 2026-10-21 | 1 KB (3) | 1 KB (17) | 1 KB (39) | 22 KB (377) | 1 KB (0) | 1 KB (0) | 1 KB (55) | 1 KB (23) | 3 KB (99) | 1 KB (0) | 1 KB (0) |
 | Nauru | 2026-10-21 | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (4) | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (0) |
 | Navarre (Spain) | 2026-10-21 | 3 KB (17) | 1 KB (36) | 26 KB (1865) | 132 KB (2426) | 1 KB (1) | 1 KB (0) | 2 KB (142) | 32 KB (536) | 4 KB (125) | 1 KB (12) | 1 KB (1) |
 | Nayarit (Mexico) | 2026-10-21 | 1 KB (7) | 1 KB (22) | 1 KB (9) | 23 KB (89) | 1 KB (0) | 1 KB (0) | 1 KB (69) | 1 KB (1) | 1 KB (13) | 1 KB (28) | 1 KB (0) |
@@ -458,9 +458,9 @@ The size of each pack, and its number of features in brackets.
 | Nuevo León (Mexico) | 2026-10-21 | 1 KB (18) | 1 KB (32) | 1 KB (24) | 75 KB (773) | 1 KB (0) | 1 KB (18) | 1 KB (82) | 20 KB (41) | 5 KB (166) | 1 KB (42) | 1 KB (21) |
 | Nunavut (Canada) | 2026-10-21 | 4 KB (26) | 1 KB (11) | 1 KB (3) | 4 KB (38) | 1 KB (63) | 1 KB (0) | 3 KB (199) | 1 KB (30) | 1 KB (18) | 3 KB (101) | 1 KB (0) |
 | Oaxaca (Mexico) | 2026-10-21 | 1 KB (11) | 1 KB (14) | 1 KB (15) | 56 KB (262) | 1 KB (0) | 1 KB (0) | 16 KB (828) | 5 KB (49) | 1 KB (56) | 1 KB (12) | 1 KB (1) |
-| Occitania (France) | 2026-10-21 | 35 KB (369) | 3 KB (197) | 132 KB (9097) | 1.0 MB (23051) | 1 KB (3) | 1 KB (22) | 72 KB (5323) | 50 KB (1141) | 38 KB (1059) | 10 KB (315) | 1 KB (15) |
+| Occitania (France) | 2026-10-21 | 35 KB (369) | 3 KB (197) | 132 KB (9097) | 1.0 MB (23051) | 1 KB (3) | 1 KB (22) | 72 KB (5323) | 51 KB (1141) | 38 KB (1059) | 10 KB (315) | 1 KB (15) |
 | Odisha (India) | 2026-10-21 | 6 KB (60) | 1 KB (63) | 1 KB (18) | 224 KB (1658) | 1 KB (0) | 1 KB (1) | 2 KB (111) | 3 KB (86) | 21 KB (367) | 1 KB (23) | 1 KB (0) |
-| Ohio (United States) | 2026-10-21 | 14 KB (88) | 10 KB (450) | 12 KB (919) | 901 KB (19056) | 1 KB (20) | 1 KB (17) | 83 KB (6808) | 214 KB (1294) | 38 KB (1096) | 14 KB (495) | 1 KB (1) |
+| Ohio (United States) | 2026-10-21 | 14 KB (88) | 10 KB (450) | 12 KB (919) | 902 KB (19056) | 1 KB (20) | 1 KB (17) | 83 KB (6808) | 214 KB (1294) | 38 KB (1096) | 14 KB (495) | 1 KB (1) |
 | Oita Prefecture (Japan) | 2026-10-21 | 2 KB (7) | 1 KB (22) | 1 KB (74) | 22 KB (372) | 1 KB (0) | 1 KB (0) | 1 KB (28) | 1 KB (47) | 3 KB (124) | 1 KB (4) | 1 KB (0) |
 | Okayama Prefecture (Japan) | 2026-10-21 | 2 KB (3) | 1 KB (25) | 1 KB (81) | 44 KB (799) | 1 KB (0) | 1 KB (2) | 4 KB (227) | 1 KB (31) | 8 KB (376) | 1 KB (3) | 1 KB (0) |
 | Okinawa Prefecture (Japan) | 2026-10-21 | 30 KB (54) | 1 KB (83) | 5 KB (253) | 9 KB (258) | 1 KB (5) | 1 KB (0) | 2 KB (106) | 1 KB (18) | 4 KB (88) | 1 KB (29) | 1 KB (9) |
@@ -508,7 +508,7 @@ The size of each pack, and its number of features in brackets.
 | Qatar | 2026-10-21 | 9 KB (141) | 1 KB (100) | 1 KB (36) | 37 KB (413) | 1 KB (0) | 1 KB (1) | 3 KB (262) | 57 KB (1425) | 1 KB (4) | 1 KB (16) | 1 KB (1) |
 | Qinghai (China) | 2026-10-21 | 8 KB (152) | 1 KB (27) | 1 KB (22) | 531 KB (4254) | 1 KB (7) | 1 KB (23) | 8 KB (683) | 34 KB (161) | 6 KB (148) | 1 KB (15) | 1 KB (0) |
 | Quebec (Canada) | 2026-10-21 | 15 KB (125) | 4 KB (250) | 28 KB (2166) | 1.9 MB (32208) | 1 KB (12) | 1 KB (12) | 33 KB (2465) | 33 KB (498) | 98 KB (3806) | 9 KB (261) | 2 KB (179) |
-| Queensland (Australia) | 2026-10-21 | 20 KB (113) | 6 KB (331) | 32 KB (2713) | 864 KB (19299) | 1 KB (16) | 1 KB (1) | 16 KB (1123) | 44 KB (1081) | 24 KB (579) | 20 KB (815) | 1 KB (0) |
+| Queensland (Australia) | 2026-10-21 | 20 KB (113) | 6 KB (331) | 32 KB (2713) | 863 KB (19299) | 1 KB (16) | 1 KB (1) | 16 KB (1123) | 44 KB (1081) | 24 KB (579) | 20 KB (815) | 1 KB (0) |
 | Querétaro (Mexico) | 2026-10-21 | 1 KB (2) | 1 KB (8) | 1 KB (34) | 26 KB (282) | 1 KB (1) | 1 KB (0) | 1 KB (22) | 8 KB (19) | 1 KB (32) | 1 KB (2) | 1 KB (0) |
 | Quintana Roo (Mexico) | 2026-10-21 | 1 KB (21) | 1 KB (18) | 1 KB (25) | 23 KB (106) | 1 KB (0) | 1 KB (0) | 1 KB (73) | 1 KB (0) | 1 KB (1) | 1 KB (18) | 1 KB (13) |
 | Rajasthan (India) | 2026-10-21 | 21 KB (377) | 2 KB (175) | 2 KB (115) | 640 KB (3593) | 1 KB (2) | 1 KB (1) | 1 KB (79) | 3 KB (71) | 14 KB (404) | 2 KB (43) | 1 KB (2) |
@@ -518,7 +518,7 @@ The size of each pack, and its number of features in brackets.
 | Republic of Mordovia (Russia) | 2026-10-21 | 1 KB (20) | 1 KB (5) | 3 KB (127) | 164 KB (2288) | 2 KB (430) | 1 KB (0) | 3 KB (222) | 16 KB (245) | 2 KB (86) | 1 KB (9) | 1 KB (0) |
 | Republic of North Ossetia – Alania (Russia) | 2026-10-21 | 6 KB (41) | 1 KB (15) | 2 KB (86) | 48 KB (397) | 1 KB (0) | 1 KB (27) | 1 KB (25) | 4 KB (42) | 1 KB (6) | 1 KB (4) | 1 KB (27) |
 | Republic of the Congo | 2026-10-21 | 1 KB (17) | 1 KB (31) | 1 KB (20) | 16 KB (61) | 1 KB (0) | 1 KB (0) | 1 KB (104) | 2 KB (39) | 1 KB (5) | 2 KB (36) | 1 KB (8) |
-| Rhineland-Palatinate (Germany) | 2026-10-21 | 37 KB (311) | 3 KB (166) | 63 KB (4225) | 370 KB (8440) | 1 KB (7) | 1 KB (29) | 39 KB (2190) | 96 KB (1743) | 10 KB (367) | 3 KB (92) | 1 KB (2) |
+| Rhineland-Palatinate (Germany) | 2026-10-21 | 37 KB (311) | 3 KB (166) | 64 KB (4225) | 370 KB (8440) | 1 KB (7) | 1 KB (29) | 39 KB (2190) | 96 KB (1743) | 10 KB (367) | 3 KB (92) | 1 KB (2) |
 | Rhode Island (United States) | 2026-10-21 | 9 KB (28) | 1 KB (22) | 1 KB (20) | 103 KB (2399) | 1 KB (0) | 1 KB (3) | 3 KB (252) | 6 KB (82) | 8 KB (214) | 1 KB (25) | 1 KB (0) |
 | Riau (Indonesia) | 2026-10-21 | 2 KB (39) | 1 KB (29) | 1 KB (9) | 25 KB (147) | 1 KB (1) | 1 KB (0) | 1 KB (95) | 3 KB (10) | 1 KB (5) | 1 KB (9) | 1 KB (1) |
 | Riau Islands (Indonesia) | 2026-10-21 | 2 KB (24) | 1 KB (18) | 1 KB (5) | 4 KB (72) | 1 KB (0) | 1 KB (0) | 1 KB (32) | 2 KB (55) | 1 KB (12) | 1 KB (9) | 1 KB (6) |
@@ -551,8 +551,8 @@ The size of each pack, and its number of features in brackets.
 | Samoa | 2026-10-21 | 1 KB (4) | 1 KB (1) | 1 KB (70) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (84) | 2 KB (39) | 1 KB (3) | 1 KB (5) | 1 KB (5) |
 | San Luis Potosí (Mexico) | 2026-10-21 | 1 KB (10) | 1 KB (14) | 1 KB (11) | 41 KB (285) | 1 KB (0) | 1 KB (0) | 1 KB (47) | 14 KB (15) | 1 KB (42) | 1 KB (20) | 1 KB (0) |
 | San Marino | 2026-10-21 | 1 KB (1) | 1 KB (1) | 1 KB (36) | 2 KB (49) | 1 KB (0) | 1 KB (2) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (2) | 1 KB (0) |
-| Santa Catarina (Brazil) | 2026-10-21 | 6 KB (83) | 5 KB (230) | 6 KB (526) | 164 KB (1016) | 1 KB (1) | 1 KB (39) | 22 KB (1815) | 28 KB (330) | 9 KB (237) | 3 KB (70) | 1 KB (6) |
-| Saratov Oblast (Russia) | 2026-10-21 | 12 KB (181) | 1 KB (110) | 4 KB (237) | 246 KB (2338) | 1 KB (2) | 1 KB (0) | 3 KB (241) | 38 KB (899) | 12 KB (451) | 1 KB (17) | 1 KB (6) |
+| Santa Catarina (Brazil) | 2026-10-21 | 6 KB (83) | 5 KB (230) | 6 KB (526) | 164 KB (1016) | 1 KB (1) | 1 KB (39) | 22 KB (1815) | 28 KB (330) | 10 KB (237) | 3 KB (70) | 1 KB (6) |
+| Saratov Oblast (Russia) | 2026-10-21 | 12 KB (181) | 1 KB (110) | 4 KB (237) | 246 KB (2338) | 1 KB (2) | 1 KB (0) | 3 KB (241) | 37 KB (899) | 12 KB (451) | 1 KB (17) | 1 KB (6) |
 | Sardinia (Italy) | 2026-10-21 | 30 KB (291) | 2 KB (97) | 28 KB (1859) | 60 KB (771) | 1 KB (8) | 1 KB (3) | 4 KB (311) | 5 KB (182) | 11 KB (224) | 1 KB (39) | 1 KB (9) |
 | Saskatchewan (Canada) | 2026-10-21 | 2 KB (11) | 1 KB (24) | 1 KB (92) | 166 KB (1545) | 1 KB (2) | 1 KB (0) | 6 KB (378) | 23 KB (389) | 48 KB (2677) | 5 KB (164) | 1 KB (31) |
 | Saudi Arabia | 2026-10-21 | 82 KB (1023) | 6 KB (622) | 11 KB (655) | 630 KB (3751) | 1 KB (94) | 1 KB (63) | 44 KB (4245) | 116 KB (1933) | 31 KB (649) | 7 KB (196) | 1 KB (62) |
@@ -562,7 +562,7 @@ The size of each pack, and its number of features in brackets.
 | Scotland (United Kingdom) | 2026-10-21 | 36 KB (351) | 4 KB (179) | 11 KB (612) | 2.3 MB (41697) | 1 KB (19) | 1 KB (7) | 37 KB (2464) | 101 KB (2021) | 45 KB (1495) | 7 KB (218) | 1 KB (1) |
 | Senegal | 2026-10-21 | 7 KB (81) | 1 KB (10) | 2 KB (92) | 39 KB (140) | 1 KB (0) | 1 KB (0) | 5 KB (359) | 3 KB (51) | 8 KB (231) | 1 KB (29) | 1 KB (14) |
 | Senkaku Islands / Diaoyudao Islands / Diaoyutai Islands | 2026-10-21 | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) |
-| Serbia | 2026-10-21 | 21 KB (207) | 1 KB (80) | 35 KB (2300) | 220 KB (1925) | 1 KB (4) | 1 KB (16) | 18 KB (1627) | 17 KB (264) | 11 KB (232) | 2 KB (55) | 3 KB (153) |
+| Serbia | 2026-10-21 | 21 KB (207) | 1 KB (80) | 36 KB (2300) | 220 KB (1925) | 1 KB (4) | 1 KB (16) | 18 KB (1627) | 17 KB (264) | 11 KB (232) | 2 KB (55) | 3 KB (153) |
 | Sergipe (Brazil) | 2026-10-21 | 2 KB (36) | 1 KB (14) | 1 KB (14) | 53 KB (195) | 1 KB (0) | 1 KB (0) | 5 KB (417) | 18 KB (112) | 2 KB (29) | 1 KB (5) | 1 KB (0) |
 | Seychelles | 2026-10-21 | 1 KB (1) | 1 KB (14) | 1 KB (8) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (14) | 1 KB (0) | 1 KB (3) | 1 KB (18) | 1 KB (0) |
 | Shaanxi (China) | 2026-10-21 | 9 KB (125) | 1 KB (12) | 1 KB (24) | 523 KB (6912) | 1 KB (4) | 1 KB (38) | 9 KB (763) | 6 KB (102) | 18 KB (536) | 2 KB (34) | 1 KB (0) |
@@ -589,7 +589,7 @@ The size of each pack, and its number of features in brackets.
 | Somalia | 2026-10-21 | 9 KB (95) | 1 KB (9) | 4 KB (241) | 1 KB (6) | 1 KB (0) | 1 KB (20) | 9 KB (709) | 1 KB (2) | 13 KB (230) | 2 KB (72) | 1 KB (5) |
 | Sonora (Mexico) | 2026-10-21 | 5 KB (30) | 1 KB (22) | 1 KB (55) | 101 KB (687) | 1 KB (0) | 1 KB (13) | 2 KB (105) | 19 KB (94) | 4 KB (104) | 4 KB (145) | 1 KB (98) |
 | South Africa | 2026-10-21 | 30 KB (350) | 12 KB (750) | 10 KB (794) | 1.5 MB (12738) | 1 KB (10) | 1 KB (41) | 34 KB (2522) | 71 KB (1571) | 219 KB (7348) | 39 KB (1497) | 2 KB (65) |
-| South Australia (Australia) | 2026-10-21 | 9 KB (40) | 1 KB (74) | 10 KB (744) | 146 KB (2003) | 1 KB (6) | 1 KB (0) | 7 KB (462) | 49 KB (1983) | 12 KB (468) | 13 KB (555) | 1 KB (2) |
+| South Australia (Australia) | 2026-10-21 | 9 KB (40) | 1 KB (74) | 10 KB (744) | 146 KB (2003) | 1 KB (6) | 1 KB (0) | 7 KB (462) | 48 KB (1983) | 12 KB (468) | 13 KB (555) | 1 KB (2) |
 | South Carolina (United States) | 2026-10-21 | 21 KB (94) | 3 KB (130) | 4 KB (241) | 672 KB (8294) | 1 KB (3) | 1 KB (8) | 36 KB (2828) | 81 KB (577) | 51 KB (1673) | 7 KB (225) | 1 KB (0) |
 | South Dakota (United States) | 2026-10-21 | 2 KB (22) | 3 KB (78) | 1 KB (59) | 2.0 MB (23559) | 1 KB (7) | 1 KB (1) | 12 KB (948) | 33 KB (182) | 53 KB (2413) | 7 KB (230) | 1 KB (0) |
 | South Georgia And South Sandwich Islands | 2026-10-21 | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (1) | 1 KB (0) | 1 KB (7) | 1 KB (0) | 1 KB (0) |
@@ -623,7 +623,7 @@ The size of each pack, and its number of features in brackets.
 | Tajikistan | 2026-10-21 | 11 KB (182) | 1 KB (93) | 19 KB (1519) | 133 KB (954) | 1 KB (0) | 1 KB (1) | 2 KB (240) | 5 KB (154) | 5 KB (105) | 1 KB (29) | 1 KB (37) |
 | Tamaulipas (Mexico) | 2026-10-21 | 1 KB (15) | 1 KB (23) | 1 KB (33) | 78 KB (818) | 1 KB (1) | 1 KB (0) | 3 KB (230) | 26 KB (141) | 4 KB (77) | 2 KB (63) | 2 KB (126) |
 | Tambov Oblast (Russia) | 2026-10-21 | 5 KB (66) | 1 KB (8) | 2 KB (104) | 218 KB (3629) | 1 KB (0) | 1 KB (0) | 3 KB (208) | 36 KB (909) | 5 KB (216) | 1 KB (18) | 1 KB (0) |
-| Tamil Nadu (India) | 2026-10-21 | 8 KB (50) | 1 KB (83) | 2 KB (134) | 526 KB (4066) | 1 KB (5) | 1 KB (4) | 3 KB (173) | 17 KB (119) | 35 KB (841) | 2 KB (31) | 1 KB (3) |
+| Tamil Nadu (India) | 2026-10-21 | 8 KB (50) | 1 KB (83) | 2 KB (134) | 525 KB (4066) | 1 KB (5) | 1 KB (4) | 3 KB (173) | 17 KB (119) | 35 KB (841) | 2 KB (31) | 1 KB (3) |
 | Tanzania | 2026-10-21 | 5 KB (49) | 1 KB (29) | 14 KB (1019) | 84 KB (284) | 1 KB (0) | 1 KB (1) | 8 KB (697) | 4 KB (66) | 6 KB (167) | 7 KB (228) | 1 KB (5) |
 | Tasmania (Australia) | 2026-10-21 | 4 KB (14) | 2 KB (84) | 2 KB (135) | 52 KB (1129) | 1 KB (3) | 1 KB (1) | 3 KB (218) | 4 KB (100) | 6 KB (145) | 3 KB (105) | 1 KB (0) |
 | Tatarstan (Russia) | 2026-10-21 | 2 KB (30) | 2 KB (190) | 13 KB (815) | 358 KB (2836) | 1 KB (0) | 1 KB (1) | 15 KB (1164) | 42 KB (859) | 2 KB (77) | 1 KB (32) | 1 KB (0) |
@@ -662,9 +662,9 @@ The size of each pack, and its number of features in brackets.
 | Udmurtia (Russia) | 2026-10-21 | 2 KB (22) | 1 KB (27) | 9 KB (585) | 170 KB (1644) | 1 KB (0) | 1 KB (0) | 8 KB (635) | 30 KB (460) | 3 KB (73) | 1 KB (14) | 1 KB (4) |
 | Uganda | 2026-10-21 | 6 KB (52) | 1 KB (7) | 46 KB (2867) | 104 KB (4603) | 1 KB (0) | 1 KB (0) | 5 KB (328) | 3 KB (129) | 2 KB (93) | 2 KB (53) | 1 KB (19) |
 | Ukraine | 2026-10-21 | 211 KB (8219) | 9 KB (657) | 150 KB (8749) | 3.1 MB (30657) | 1 KB (25) | 1 KB (87) | 187 KB (10146) | 224 KB (6372) | 135 KB (4684) | 20 KB (640) | 5 KB (330) |
-| Ulyanovsk Oblast (Russia) | 2026-10-21 | 2 KB (25) | 1 KB (9) | 5 KB (319) | 186 KB (2807) | 1 KB (5) | 1 KB (2) | 4 KB (288) | 33 KB (999) | 1 KB (34) | 1 KB (22) | 1 KB (0) |
+| Ulyanovsk Oblast (Russia) | 2026-10-21 | 2 KB (25) | 1 KB (9) | 5 KB (319) | 185 KB (2807) | 1 KB (5) | 1 KB (2) | 4 KB (288) | 33 KB (999) | 1 KB (34) | 1 KB (22) | 1 KB (0) |
 | Umbria (Italy) | 2026-10-21 | 3 KB (32) | 1 KB (19) | 25 KB (1706) | 55 KB (529) | 1 KB (0) | 1 KB (7) | 3 KB (167) | 1 KB (28) | 1 KB (31) | 1 KB (33) | 1 KB (0) |
-| United Arab Emirates | 2026-10-21 | 23 KB (414) | 11 KB (1139) | 3 KB (219) | 185 KB (1990) | 1 KB (16) | 1 KB (42) | 16 KB (1342) | 101 KB (2161) | 12 KB (254) | 4 KB (77) | 1 KB (50) |
+| United Arab Emirates | 2026-10-21 | 23 KB (414) | 11 KB (1139) | 3 KB (219) | 185 KB (1990) | 1 KB (16) | 1 KB (42) | 16 KB (1342) | 102 KB (2161) | 12 KB (254) | 4 KB (77) | 1 KB (50) |
 | United States Minor Outlying Islands | 2026-10-21 | 1 KB (1) | 1 KB (1) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (0) | 1 KB (5) | 1 KB (0) |
 | United States Virgin Islands | 2026-10-21 | 1 KB (3) | 1 KB (7) | 1 KB (0) | 1 KB (3) | 1 KB (0) | 1 KB (2) | 1 KB (13) | 1 KB (2) | 1 KB (1) | 1 KB (4) | 1 KB (0) |
 | Uruguay | 2026-10-21 | 6 KB (66) | 1 KB (49) | 1 KB (62) | 119 KB (472) | 1 KB (2) | 1 KB (1) | 5 KB (315) | 2 KB (83) | 4 KB (120) | 4 KB (134) | 1 KB (13) |
