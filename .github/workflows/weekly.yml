@@ -1,0 +1,116 @@
+# Builds the map-feature packs of every country every week and publishes them as releases.
+# Each continent gets a release named <continent>-<yyyymmdd>; the release «index» holds index.json(.gz),
+# the list the app reads. STATUS.md is committed every week: it shows what was built, and the commit keeps
+# this schedule alive (GitHub switches off schedules of repositories with no activity for 60 days).
+name: Weekly packs
+
+on:
+  schedule:
+    - cron: '23 3 * * 1'          # Mondays at 03:23 UTC, after Geofabrik's nightly extracts
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Only these areas (Geofabrik ids, comma-separated) for a test, e.g. cyprus,malta. Empty: all.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write                 # the releases and the weekly STATUS.md commit
+  actions: write                  # switches this schedule back on, should GitHub ever switch it off
+
+concurrency:
+  group: weekly-packs
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      groups: ${{ steps.plan.outputs.groups }}
+      week: ${{ steps.plan.outputs.week }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          ONLY: ${{ inputs.only }}
+        run: python3 -I build_all.py plan --out plan.json --only "$ONLY" --github-output "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: plan.json
+          retention-days: 7
+
+  build:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        group: ${{ fromJson(needs.plan.outputs.groups) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+      - name: Build the packs
+        run: python3 -I build_all.py build --plan plan.json --group "${{ matrix.group }}" --out out --jobs 4
+      - name: Publish them as a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ matrix.group }}-${{ needs.plan.outputs.week }}
+        run: |
+          gh release delete "$TAG" --cleanup-tag --yes 2>/dev/null || true
+          gh release create "$TAG" out/*.amf --latest=false --notes-file out/NOTES.md \
+            --title "Packs of ${{ matrix.group }}, week of ${{ needs.plan.outputs.week }}"
+      # only after the release is there, so the index never points at packs that were not published
+      - uses: actions/upload-artifact@v4
+        with:
+          name: summaries-${{ matrix.group }}
+          path: out/*.json
+          retention-days: 7
+
+  index:
+    needs: [plan, build]
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      WEEK: ${{ needs.plan.outputs.week }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+      - uses: actions/download-artifact@v4
+        continue-on-error: true   # no summaries at all if every group failed: the index keeps last week's packs
+        with:
+          pattern: summaries-*
+          path: summaries
+          merge-multiple: true
+      - name: The index the app reads
+        run: |
+          mkdir -p summaries
+          gh release download index --pattern index.json --output previous.json 2>/dev/null || echo '{}' > previous.json
+          python3 -I build_all.py index --plan plan.json --summaries summaries --repo "$GITHUB_REPOSITORY" \
+            --week "$WEEK" --previous previous.json --out index.json --status STATUS.md
+          gh release view index >/dev/null 2>&1 || gh release create index --latest --title "Index of the packs" \
+            --notes "The app reads index.json.gz. Map data © OpenStreetMap contributors, ODbL 1.0."
+          gh release upload index index.json index.json.gz --clobber
+      - name: Remove the releases no longer needed
+        run: |
+          gh release list --limit 1000 --json tagName > releases.json
+          for t in $(python3 -I build_all.py cleanup --index index.json --releases releases.json --keep 2); do
+            gh release delete "$t" --cleanup-tag --yes
+          done
+      - name: Weekly status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md
+          git commit -m "Packs of the week of $WEEK" || echo "STATUS.md has not changed"
+          git push
+          gh workflow enable weekly.yml || true

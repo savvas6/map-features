@@ -1,0 +1,14 @@
+# work files of local runs
+out/
+downloads/
+packs/
+summaries/
+*.osm.pbf
+*.part
+plan.json
+previous.json
+releases.json
+index.json
+index.json.gz
+__pycache__/
+.DS_Store
